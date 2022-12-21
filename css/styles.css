@@ -154,7 +154,7 @@ body {
 .header.main {
   color: #fff;
   height: 100vh;
-  background: url(../images/main.jpeg) center center/cover;
+  background: url(../images/mainpage/main.webp) center center/cover;
 }
 .header__top {
   display: flex;
