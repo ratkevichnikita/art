@@ -1,0 +1,10 @@
+@media screen and (max-width: 720px) {
+    .header__phone {
+        &.mobile  {
+            display: block;
+        }
+        &.desctop {
+            display: none;
+        }
+    }
+}

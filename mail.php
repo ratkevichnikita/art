@@ -11,29 +11,40 @@
 use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\PHPException;
 
-require 'phpmailer/src/Exception.php';
-require 'phpmailer/src/PHPMailer.php';
-require 'phpmailer/src/SMTP.php';
+require 'PHPMailer/src/Exception.php';
+require 'PHPMailer/src/PHPMailer.php';
+require 'PHPMailer/src/SMTP.php';
 
-if(isset($_POST['send'])) {
+if(isset($_POST["send"])) {
+   
     $mail = new PHPMailer(true);
-    $mail -> isSMTP();
-    $mail -> Host = 'smtp.mail.ru';
-    $mail -> SMTPAuth = true;
-    $mail -> Username = 'e6wuk1990@gmail.com';
-    $mail -> Password = 'Nekit1990!';
-    $mail -> SMTPSecture = 'ssl!';
-    $mail -> Port = '465';
+    $mail -> CharSet = 'utf-8';
+    $name = $_POST["name"];
+    $phone = $_POST["phone"];
+    $mail->isSMTP();
+    $mail->Host = 'smtp.gmail.com';
+    $mail->SMTPAuth = true;
+    $mail->Username = 'e6wuk1990@gmail.com';
+    $mail->Password = 'josfstjaxkbdjsex';
+    $mail->SMTPSecture = 'ssl';
+    $mail->Port = '587';
 
-    $mail -> setFrom('e6wuk1990@mail.ru');
-    $mail -> addAddress($_POST['email']);
+    $mail -> setFrom('e6wuk1990@gmail.com');
+    $mail -> addAddress('e6wuk1990@mail.ru');
     $mail -> isHtml(true);
-    $mail -> Subject = $_POST['subject'];
-    $mail -> Body = $_POST['message'];
-    $mail -> send();
-
-    echo "<script>alert('sended')</script>";
-
+    $mail -> Subject = 'Новая заявка';
+    $mail -> Body = '<h3>Сообщение: </h3>'.'<p> Имя: '.$name. '</p>'. '<p> Номер телефона: '.$phone. '</p>';
+    
+    if (!$mail->send()) {
+    echo 'Mailer Error: ' . $mail->ErrorInfo;
+    } else {
+         echo 
+            "
+            <script>
+            window.location.assign('http://d95067vc.beget.tech/thank-you.html')
+            </script>
+            ";
+    }
 };
 
 ?>

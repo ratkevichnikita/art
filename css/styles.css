@@ -97,6 +97,9 @@ body {
   padding: 0;
   color: #232323;
 }
+body.freeze {
+  overflow: hidden;
+}
 
 .wrapper {
   max-width: 1200px;
@@ -308,6 +311,12 @@ body {
   align-items: center;
   font-size: 18px;
   font-weight: 600;
+}
+.header__phone.mobile {
+  display: none;
+}
+.header__phone.desctop {
+  cursor: pointer;
 }
 .header__phone svg {
   margin-right: 15px;
@@ -599,7 +608,7 @@ body {
 }
 .form__item {
   display: block;
-  max-width: 570px;
+  max-width: 530px;
   width: 100%;
   border: 1px solid #D8D8D8;
   padding: 15px 20px;
@@ -967,11 +976,27 @@ body {
   align-items: center;
   justify-content: center;
 }
+.modal.hidden {
+  -webkit-animation: fadeIn 0, s5 linear forwards;
+          animation: fadeIn 0, s5 linear forwards;
+  display: none;
+}
 .modal__container {
+  position: relative;
   background-color: #fff;
   max-width: 670px;
   width: 100%;
   padding: 50px;
+}
+.modal__title {
+  max-width: 80%;
+  margin-bottom: 30px;
+}
+.modal__close {
+  position: absolute;
+  right: 20px;
+  top: 20px;
+  cursor: pointer;
 }
 
 @-webkit-keyframes fadeIn {
@@ -989,5 +1014,13 @@ body {
   }
   100% {
     opacity: 1;
+  }
+}
+@media screen and (max-width: 720px) {
+  .header__phone.mobile {
+    display: block;
+  }
+  .header__phone.desctop {
+    display: none;
   }
 }/*# sourceMappingURL=styles.css.map */

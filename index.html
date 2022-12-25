@@ -10,7 +10,7 @@
 	<title>Document</title>
 </head>
 
-<body>
+<body id="body">
 
 	<header class="header main">
 		<div class="wrapper">
@@ -121,12 +121,17 @@
 						</a>
 					</li>
 				</ul>
-				<a href="tel:+74996774817" class="header__phone">
+				<div class="header__phone desctop modal-js">
 					<svg width="23" height="23">
 						<use xlink:href="images/sprites.svg#phone" />
 					</svg>
 					+ 7 (499) 677-48-17
-
+				</div>
+				<a href="tel:+74996774817" class="header__phone mobile">
+					<svg width="23" height="23">
+						<use xlink:href="images/sprites.svg#phone" />
+					</svg>
+					+ 7 (499) 677-48-17
 				</a>
 			</div>
 			<div class="header__line">
@@ -832,7 +837,7 @@
 					</svg>
 					+ 7 (909) 689-03-99
 				</a>
-				<button class="sub-btn">
+				<button class="sub-btn modal-js">
 					Перезвонить мне
 				</button>
 				<div class="footer__social">
@@ -994,18 +999,29 @@
 			</div>
 		</div>
 	</footer>
-	<div class="modal">
+	
+	<div class="modal hidden">
 		<div class="modal__container">
+			<div class="modal__title">
+				<h3>
+					Нужна консультация специалиста? Перезвоним в течение 15 минут.
+				</h3>
+			</div>
 			<form action="/mail.php" method="POST" class="form">
-				<input type="text" placeholder="Ваше имя" name="user_name" class="form__item">
-				<input type="text" placeholder="Номер телефона" name="user_phone" class="form__item">
+				<input type="text" placeholder="Ваше имя" name="name" class="form__item">
+				<input type="text" placeholder="Номер телефона" name="phone" class="form__item">
 				<p class="form__label">Нажимая на эту кнопку Вы соглашаетесь с нашей <a href="#">Политикой
 						конфиденциальностити</a></p>
-				<button class="main-btn" type="submit">Получить подарок и скидку</button>
+				<button class="main-btn" name="send" type="submit">Получить подарок и скидку</button>
 			</form>
-			<div class="modal__close"></div>
+			<div class="modal__close close-js">
+				<svg width="30" height="30">
+					<use xlink:href="images/sprites.svg#close" />
+				</svg>
+			</div>
 		</div>
 	</div>
+
 	<script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
 	<script src="js/main.js"></script>
 	<script type="module">

@@ -110,6 +110,9 @@ body {
   margin: 0;
   padding: 0;
   color: #232323;
+  &.freeze {
+    overflow: hidden;
+  }
 }
 
 // -----------------------------------
@@ -361,7 +364,12 @@ body {
   &__phone {
     display: flex;
     align-items: center;
-
+    &.mobile {
+      display: none;
+    }
+    &.desctop {
+      cursor: pointer;
+    }
     svg {
       margin-right: 15px;
     }
@@ -722,7 +730,7 @@ body {
 
   &__item {
     display: block;
-    max-width: 570px;
+    max-width: 530px;
     width: 100%;
     border: 1px solid #D8D8D8;
     padding: 15px 20px;
@@ -1144,11 +1152,26 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
+  &.hidden {
+    animation: fadeIn 0,s5 linear forwards;
+    display: none;
+  }
   &__container {
+    position: relative;
     background-color: #fff;
     max-width: 670px;
     width: 100%;
     padding: 50px;
+  }
+  &__title {
+    max-width: 80%;
+    margin-bottom: 30px;
+  }
+  &__close {
+    position: absolute;
+    right: 20px;
+    top: 20px;
+    cursor: pointer;
   }
 }
 
