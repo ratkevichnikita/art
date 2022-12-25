@@ -64,3 +64,22 @@ const showCurrentNumber = (number) => {
 	
 }
 
+// accordion for questions and answers
+
+const qList = document.querySelectorAll('.questions__item');
+
+qList.forEach(item => {
+	item.addEventListener('click', (event) => {
+		const target = event.target;
+		if(target.dataset.name === 'toggle') {
+			if(target.closest('LI').classList.contains('active')) {
+				target.closest('LI').classList.remove('active')
+			} else {
+				target.closest('LI').classList.add('active')
+			}
+			// qList.forEach(item => item.classList.remove('active'))
+		}
+	})
+})
+
+
