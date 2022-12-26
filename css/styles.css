@@ -153,6 +153,7 @@ body.is-modal-open .modal {
   transition: color 0.3s;
   text-transform: uppercase;
   font-size: 12px;
+  font-weight: 600;
 }
 .buttonbg svg {
   position: absolute;
@@ -766,6 +767,10 @@ body.is-modal-open .modal {
   align-items: center;
   margin-bottom: 20px;
 }
+.main-reviews__header p {
+  font-size: 24px;
+  line-height: 1.5em;
+}
 .main-reviews__header img {
   margin-right: 20px;
 }
@@ -805,7 +810,6 @@ body.is-modal-open .modal {
   opacity: 1;
   margin-bottom: 20px;
   margin-left: 40px;
-  padding-top: 15px;
   pointer-events: all;
 }
 .questions__item > p {

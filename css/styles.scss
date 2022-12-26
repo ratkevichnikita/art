@@ -167,7 +167,7 @@ body {
   transition: color 0.3s;
   text-transform: uppercase;
   font-size: 12px;
-
+  font-weight: 600;
   svg {
     position: absolute;
     left: -15%;
@@ -916,6 +916,10 @@ body {
     display: flex;
     align-items: center;
     margin-bottom: 20px;
+    p {
+      font-size: 24px;
+      line-height: 1.5em;
+    }
     img {
       margin-right: 20px;
     }
@@ -959,7 +963,6 @@ body {
         opacity: 1;
         margin-bottom: 20px;
         margin-left: 40px;
-        padding-top: 15px;
         pointer-events: all;
       }
       
