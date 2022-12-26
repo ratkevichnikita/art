@@ -110,8 +110,11 @@ body {
   margin: 0;
   padding: 0;
   color: #232323;
-  &.freeze {
+  &.is-modal-open {
     overflow: hidden;
+    .modal {
+      display: flex;
+    }
   }
 }
 
@@ -1152,10 +1155,8 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  &.hidden {
-    animation: fadeIn 0,s5 linear forwards;
-    display: none;
-  }
+  z-index: 100;
+  display: none;
   &__container {
     position: relative;
     background-color: #fff;

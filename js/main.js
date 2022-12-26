@@ -84,18 +84,21 @@ qList.forEach(item => {
 
 // open / close modal
 
-const modalBtn = document.querySelector('.modal-js');
+const modalBtn = document.querySelectorAll('.modal-js');
 const modal = document.querySelector('.modal');
-const closeBtn = document.querySelector('.close-js');
-const body =  document.getElementById('body')
 
-modalBtn.addEventListener('click', () => {
-	modal.classList.remove('hidden');
-	body.classList.add('freeze');
+modalBtn.forEach(btn => {
+	btn.addEventListener('click', () => {
+		document.body.classList.add('is-modal-open');
+	})
 })
 
-closeBtn.addEventListener('click', () => {
-	modal.classList.add('hidden');
-	body.classList.remove('freeze');
+modal.addEventListener('click', (event) => {
+	const target = event.target;
+	if(target.closest('.close-js')) {
+		document.body.classList.remove('is-modal-open');
+	}
+	if(target.classList.contains('modal')){
+		document.body.classList.remove('is-modal-open');
+	}
 })
-

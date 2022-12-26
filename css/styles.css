@@ -97,8 +97,11 @@ body {
   padding: 0;
   color: #232323;
 }
-body.freeze {
+body.is-modal-open {
   overflow: hidden;
+}
+body.is-modal-open .modal {
+  display: flex;
 }
 
 .wrapper {
@@ -975,10 +978,7 @@ body.freeze {
   display: flex;
   align-items: center;
   justify-content: center;
-}
-.modal.hidden {
-  -webkit-animation: fadeIn 0, s5 linear forwards;
-          animation: fadeIn 0, s5 linear forwards;
+  z-index: 100;
   display: none;
 }
 .modal__container {
