@@ -57,11 +57,11 @@ const showCurrentQuestion = (number) => {
 
 const showCurrentNumber = (number) => {
 	const currentNumber = [...questionsNumbers].find((item, index) => index === number);
-	questionsNumbers.forEach(n => n.classList.remove('active') )
-	if(currentNumber) {
+	questionsNumbers.forEach(n => n.classList.remove('active'))
+	if (currentNumber) {
 		currentNumber.classList.add('active')
 	}
-	
+
 }
 
 // accordion for questions and answers
@@ -71,8 +71,8 @@ const qList = document.querySelectorAll('.questions__item');
 qList.forEach(item => {
 	item.addEventListener('click', (event) => {
 		const target = event.target;
-		if(target.dataset.name === 'toggle') {
-			if(target.closest('LI').classList.contains('active')) {
+		if (target.dataset.name === 'toggle') {
+			if (target.closest('LI').classList.contains('active')) {
 				target.closest('LI').classList.remove('active')
 			} else {
 				target.closest('LI').classList.add('active')
@@ -95,10 +95,47 @@ modalBtn.forEach(btn => {
 
 modal.addEventListener('click', (event) => {
 	const target = event.target;
-	if(target.closest('.close-js')) {
+	if (target.closest('.close-js')) {
 		document.body.classList.remove('is-modal-open');
 	}
-	if(target.classList.contains('modal')){
+	if (target.classList.contains('modal')) {
 		document.body.classList.remove('is-modal-open');
 	}
+})
+
+// smooth scroll
+
+const anchors = document.querySelectorAll('.go-to')
+
+for (let anchor of anchors) {
+	anchor.addEventListener('click', function (e) {
+		e.preventDefault()
+
+		const blockID = anchor.getAttribute('href').substr(1)
+
+		document.getElementById(blockID).scrollIntoView({
+			behavior: 'smooth',
+			block: 'start'
+		})
+	})
+}
+
+//modile menu 
+const subitemMenuItem = document.querySelectorAll('.subitem-js');
+const mobileMenu = document.querySelector('.mobile-menu');
+const burger = document.querySelector('.mobile-menu-button');
+
+burger.addEventListener('click', () => {
+	burger.classList.toggle('active');
+	mobileMenu.classList.toggle('active');
+})
+
+
+subitemMenuItem.forEach(item => {
+	item.addEventListener('click', (event) => {
+		subitemMenuItem.forEach(item => item.classList.remove('active'))
+		if (event.target.closest('.subitem-js')) {
+			item.classList.add('active')
+		}
+	})
 })

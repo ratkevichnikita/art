@@ -1,10 +1,42 @@
+@media screen and (max-width: 1200px) {
+	h1 {
+		font-size: 36px;
+	}
+	h2 {
+		font-size: 30px;
+	}
+	.section	{
+		padding: 100px 0;
+	}
+	.header {
+		&__menu {
+			display: none;
+		}
+		&__top {
+			padding-top: 15px;
+		}
+		&__logo {
+			width: 100px;
+		}
+	}
+
+	.mobile-menu-button {
+		display: flex;
+	}
+	.hww__button {
+		margin: 40px auto 0;
+	}
+
+}
+
 @media screen and (max-width: 720px) {
-    .header__phone {
-        &.mobile  {
-            display: block;
-        }
-        &.desctop {
-            display: none;
-        }
-    }
+	.header__phone {
+		&.mobile {
+			display: block;
+		}
+
+		&.desctop {
+			display: none;
+		}
+	}
 }
