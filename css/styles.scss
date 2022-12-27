@@ -172,7 +172,9 @@ body {
   text-transform: uppercase;
   font-size: 12px;
   font-weight: 600;
-
+  &.mobile {
+    display: none;
+  }
   svg {
     position: absolute;
     left: -15%;
@@ -848,6 +850,7 @@ body {
       text-align: center;
       color: #FFFFFF;
       max-width: 370px;
+      margin: 0 auto;
     }
   }
 
@@ -995,7 +998,7 @@ body {
     border-bottom: 1px solid #FBC062;
     width: fit-content;
     transition: 0.3s;
-
+    margin-top: 10px;
     &:hover {
       border-bottom: 1px solid transparent;
     }
@@ -1303,11 +1306,12 @@ body {
   width: 30vw;
   height: 100%;
   background-color: #fff;
-  padding: 20px;
+  padding: 80px 20px 20px;
   color: #121212;
   text-align: right;
   transform: translateX(100vw);
   transition: 0.3s;
+  z-index: 10;
   &.active {
     transform: translateX(0);
   }
@@ -1318,7 +1322,12 @@ body {
     flex-direction: column;
     justify-content: space-between;
     margin-right: 13px;
+    position: relative;
+    z-index: 20;
     &.active {
+      span {
+        background-color: #121212;
+      }
       span:nth-child(1){
         transform: rotate(45deg) translate(8px, 8px);
       }

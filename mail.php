@@ -1,13 +1,5 @@
-
-
 <?php
 
-/**
- * PHPMailer simple contact form example.
- * If you want to accept and send uploads in your form, look at the send_file_upload example.
- */
-
-//Import the PHPMailer class into the global namespace
 use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\PHPException;
 
@@ -25,7 +17,7 @@ if(isset($_POST["send"])) {
     $mail->SMTPAuth = true;
     $mail->Username = 'e6wuk1990@gmail.com';
     $mail->Password = 'josfstjaxkbdjsex';
-    $mail->SMTPSecture = 'ssl';
+    $mail->SMTPSecture = 'tls';
     $mail->Port = '587';
 
     $mail -> setFrom('e6wuk1990@gmail.com');
@@ -62,7 +54,7 @@ if(isset($_POST["quiz"])) {
     $mail->SMTPAuth = true;
     $mail->Username = 'e6wuk1990@gmail.com';
     $mail->Password = 'josfstjaxkbdjsex';
-    $mail->SMTPSecture = 'ssl';
+    $mail->SMTPSecture = 'tls';
     $mail->Port = '587';
 
     $mail -> setFrom('e6wuk1990@gmail.com');
@@ -75,7 +67,7 @@ if(isset($_POST["quiz"])) {
     '<p> Номер телефона: '.$phone. '</p>'.
     '<p> Тип жилья: '.$type. '</p>'.
     '<p> Общая площать помещения: '.$size. '</p>'.
-    '<p> Количество комнат: '.$phone. '</p>'.
+    '<p> Количество комнат: '.$room. '</p>'.
     '<p> Вид ремонта: '.$typeofRepair. '</p>'.
     '<p> Время начала ремонта: '.$timeofstart. '</p>'.
     '<p> Подарок: '.$present. '</p>'
