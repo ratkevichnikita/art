@@ -67,6 +67,8 @@ h3 {
 button {
   outline: none;
   border: none;
+  text-decoration: none;
+  color: inherit;
 }
 
 div,
