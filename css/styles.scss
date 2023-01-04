@@ -110,7 +110,9 @@ body {
   margin: 0;
   padding: 0;
   color: #232323;
-
+  &.is-menu-open {
+    overflow: hidden;
+  }
   &.is-modal-open {
     overflow: hidden;
 
@@ -133,6 +135,7 @@ body {
 .main-btn {
   max-width: 220px;
   width: 100%;
+  height: 55px;
   color: #121212;
   font-weight: 600;
   font-size: 12px;
@@ -612,48 +615,50 @@ body {
     justify-content: space-between;
     width: 80%;
     margin-bottom: 30px;
+  }
 
-    li {
-      font-size: 36px;
-      position: relative;
-      line-height: 1.5em;
-      text-align: center;
-      text-transform: uppercase;
-      color: #787878;
+  &__number {
+    font-size: 36px;
+    position: relative;
+    line-height: 1.5em;
+    text-align: center;
+    text-transform: uppercase;
+    color: #787878;
 
-      &.active {
-        color: #232323;
+    &.active {
+      color: #232323;
 
-        &:before {
-          content: '';
-          width: 90px;
-          height: 43px;
-          border: 1px solid #FBC267;
-          border-radius: 54%;
-          transform: rotate(-21deg);
-          position: absolute;
-          left: -20px;
-          top: 3px;
-        }
+      &:before {
+        content: '';
+        width: 90px;
+        height: 43px;
+        border: 1px solid #FBC267;
+        border-radius: 54%;
+        transform: rotate(-21deg);
+        position: absolute;
+        left: -20px;
+        top: 3px;
       }
+    }
 
-      &.last {
-        &:after {
-          content: '';
-          width: 45px;
-          height: 45px;
-          background: url('../images/mainpage/present.webp') no-repeat center center / cover;
-          position: absolute;
-          right: -25px;
-          top: 15px;
-        }
+    &.last {
+      &:after {
+        content: '';
+        width: 45px;
+        height: 45px;
+        background: url('../images/mainpage/present.webp') no-repeat center center / cover;
+        position: absolute;
+        right: -25px;
+        top: 15px;
       }
     }
   }
 
   &__present {
     position: relative;
-
+    &.hidden {
+      display: none;
+    }
     img {
       position: absolute;
       right: 0;
@@ -773,7 +778,7 @@ body {
     max-width: 530px;
     width: 100%;
     border: 1px solid #D8D8D8;
-    padding: 15px 20px;
+    padding: 15px 0px 15px 20px;
     margin-bottom: 20px;
     background-color: transparent;
   }
@@ -1098,6 +1103,10 @@ body {
     padding-top: 60px;
     display: flex;
     justify-content: space-between;
+    flex-wrap: wrap;
+    > div {
+      margin-bottom: 30px;
+    }
   }
 }
 
@@ -1304,6 +1313,7 @@ body {
   right: 0;
   top: 0;
   width: 30vw;
+  min-width: 200px;
   height: 100%;
   background-color: #fff;
   padding: 80px 20px 20px;

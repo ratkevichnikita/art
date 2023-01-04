@@ -22,6 +22,8 @@ const questionsNumbers = document.querySelectorAll('.quiz__number');
 const quizContainer = document.querySelector('.quiz__container')
 // quiz form 
 const quizForm = document.querySelector('.form');
+//quiz present 
+const quizPresent = document.querySelector('.quiz__present')
 let currentQuestionIndex = 0;
 
 next.addEventListener('click', () => {
@@ -51,7 +53,8 @@ const showCurrentQuestion = (number) => {
 		currentQuestion.classList.add('active');
 	} else {
 		quizContainer.classList.add('hidden');
-		quizForm.classList.remove('hidden')
+		quizForm.classList.remove('hidden');
+		quizPresent.classList.add('hidden')
 	}
 }
 
@@ -128,6 +131,7 @@ const burger = document.querySelector('.mobile-menu-button');
 burger.addEventListener('click', () => {
 	burger.classList.toggle('active');
 	mobileMenu.classList.toggle('active');
+	document.body.classList.toggle('is-menu-open');
 })
 
 
