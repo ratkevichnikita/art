@@ -443,7 +443,7 @@
 				</div>
 				<div class="quiz__content">
 					<div class="quiz__body">
-						<form action="/mail.php" method="POST">
+						<form data-name="quizForm" >
 							<div class="quiz__container">
 								<ul class="quiz__numbers">
 									<li class="quiz__number active">01</li>
@@ -535,16 +535,23 @@
 							<div class="form hidden">
 								<h3>Мы приступаем к расчету Вашего ремонта!</h3>
 								<p>Для получения персональной скидки укажите Ваши данные:</p>
-								<input type="text" placeholder="Ваше имя" name="name" class="form__item">
-								<input type="text" placeholder="Номер телефона" name="phone" class="form__item">
+								<div class="form__field field-phone">
+									<input type="text" data-name="formName" placeholder="Ваше имя" name="name" class="form__item">
+								</div>
+								<div class="form__field field-phone">
+									<input type="text" data-name="formPhone" placeholder="Номер телефона" name="phone" class="form__item">
+								</div>
 								<p class="form__label">
 									Нажимая на эту кнопку Вы соглашаетесь с нашей
 									<a href="/politics.pdf" target="_blank" rel="nofollow">
 										Политикой конфиденциальностити</a>
 								</p>
-								<button class="main-btn" type="sumbit" name="quiz">Получить подарок и скидку</button>
+								<button class="main-btn form-btn-js" type="sumbit" name="quiz">Получить подарок и скидку</button>
 							</div>
 						</form>
+						<div class="form-success hidden">
+							Спасибо. Форма отправлена
+						</div>
 					</div>
 					<div class="quiz__present">
 						<p>
@@ -637,15 +644,22 @@
 						Предоставим Вам скидку 10% на проверенные нами строительные материалы
 					</p>
 				</div>
-				<form action="/mail.php" method="POST" class="form color">
-					<input type="text" placeholder="Ваше имя" name="name" class="form__item">
-					<input type="phone" placeholder="Номер телефона" name="phone" class="form__item">
+				<form data-name="mainForm" class="form color">
+					<div class="form__field field-name">
+						<input type="text" data-name="formName" placeholder="Ваше имя" name="name" class="form__item">
+					</div>
+					<div class="form__field field-name">
+						<input type="phone" data-name="formPhone" placeholder="Номер телефона" name="phone" class="form__item">
+					</div>
 					<p class="form__label">
 						Нажимая на эту кнопку Вы соглашаетесь с нашей
 						<a href="/politics.pdf" target="_blank" rel="nofollow">Политикой конфиденциальностити</a>
 					</p>
-					<button class="main-btn" name="send" type="sumbit">Получить подарок и скидку</button>
+					<button class="main-btn form-btn-js" name="send" type="sumbit">Получить подарок и скидку</button>
 				</form>
+				<div class="form-success hidden">
+					Спасибо. Форма отправлена
+				</div>
 			</div>
 		</div>
 	</section>
@@ -877,15 +891,22 @@
 						Предоставим Вам скидку 10% на проверенные нами строительные материалы
 					</p>
 				</div>
-				<form action="/mail.php" method="POST" class="form color">
-					<input type="text" placeholder="Ваше имя" name="name" class="form__item">
-					<input type="text" placeholder="Номер телефона" name="phone" class="form__item">
+				<form data-name="mainForm" class="form color">
+					<div class="form__field field-name">
+						<input type="text" data-name="formName" placeholder="Ваше имя" name="name" class="form__item">
+					</div>
+					<div class="form__field field-name">
+						<input type="text" data-name="formPhone" placeholder="Номер телефона" name="phone" class="form__item">
+					</div>
 					<p class="form__label">
 						Нажимая на эту кнопку Вы соглашаетесь с нашей
 						<a href="/politics.pdf" target="_blank" rel="nofollow"> Политикой конфиденциальностити</a>
 					</p>
-					<button class="main-btn" name="send" type="sumbit">Получить подарок и скидку</button>
+					<button class="main-btn form-btn-js" name="send" type="sumbit">Получить подарок и скидку</button>
 				</form>
+				<div class="form-success hidden">
+					Спасибо. Форма отправлена
+				</div>
 			</div>
 		</div>
 	</section>
@@ -1075,7 +1096,7 @@
 					Нужна консультация специалиста? Перезвоним в течение 15 минут.
 				</h3>
 			</div>
-			<form data-name="modalForm"  class="form">
+			<form data-name="modalForm" class="form">
 				<div class="form__field field-name">
 					<input data-name="formName" type="text" placeholder="Ваше имя" name="name" class="form__item" required>
 				</div>
