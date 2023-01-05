@@ -143,3 +143,58 @@ subitemMenuItem.forEach(item => {
 		}
 	})
 })
+
+// form validation
+const formButton = document.querySelector('.form-btn-js');
+const formSuccess = document.querySelector('.form-success')
+const form = document.querySelector('.form');
+const regexPhone = /^[+]?[1-9 ][0-9 ]*(?:\.[0-9 ]+)?$/;
+
+formButton.addEventListener('click', (event) => {
+	event.preventDefault();
+	const currentForm = event.target.closest('FORM');
+	const phone = currentForm.querySelector('[data-name*="formPhone"]');
+	const name = currentForm.querySelector('[data-name*="formName"]');
+	
+	let filedNameError = false;
+	let fieldPhoneError = false;
+	
+	if(name.value.length < 3) {
+		name.closest('.form__field').classList.add('error');
+		filedNameError = true;
+	} else {
+		name.closest('.form__field').classList.remove('error');
+		filedNameError = false;
+	}
+	if(phone.value.length < 6 || !regexPhone.test(phone.value)) {
+		phone.closest('.form__field').classList.add('error');
+		fieldPhoneError = true;
+	} else {
+		phone.closest('.form__field').classList.remove('error');
+		fieldPhoneError = false;
+	}
+	
+	if(!filedNameError && !fieldPhoneError) {
+		const postData =  async () => {
+			const formData = new FormData(currentForm)
+			const response = await fetch('/mail.php', {
+            method: 'POST',
+            body: formData
+    	    });
+			
+    	const resp = await response;
+    	console.log('resp', resp);
+			currentForm.innerHTML = `<div class="lds-spinner form__spinner"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>`
+			if(resp?.status === 200 && resp.ok) {
+				currentForm.classList.add('hidden');
+				formSuccess.classList.remove('hidden');
+			} else {
+				currentForm.classList.add('error');
+			}
+			return resp
+		}
+		return postData()
+	}
+	
+	
+})

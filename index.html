@@ -1075,17 +1075,26 @@
 					Нужна консультация специалиста? Перезвоним в течение 15 минут.
 				</h3>
 			</div>
-			<form action="/mail.php" method="POST" class="form">
-				<input type="text" placeholder="Ваше имя" name="name" class="form__item">
-				<input type="text" placeholder="Номер телефона" name="phone" class="form__item">
+			<form data-name="modalForm"  class="form">
+				<div class="form__field field-name">
+					<input data-name="formName" type="text" placeholder="Ваше имя" name="name" class="form__item" required>
+				</div>
+				<div class="form__field field-phone">
+					<input data-name="formPhone" type="text" placeholder="Номер телефона" name="phone" class="form__item" required>
+				</div>
 				<p class="form__label">
 					Нажимая на эту кнопку Вы соглашаетесь с нашей
 					<a href="/politics.pdf" target="_blank" rel="nofollow">
 						Политикойконфиденциальностити
 					</a>
 				</p>
-				<button class="main-btn" name="send" type="submit">Получить подарок и скидку</button>
+				<button class="main-btn form-btn-js" name="send" type="submit">
+					Получить подарок и скидку
+				</button>
 			</form>
+			<div class="form-success hidden">
+				Спасибо. Форма отправлена
+			</div>
 			<div class="modal__close close-js">
 				<svg width="30" height="30">
 					<use xlink:href="images/sprites.svg#close" />
