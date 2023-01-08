@@ -11,61 +11,69 @@ menuButton.addEventListener('mouseleave', () => {
 // ---------------------
 
 // quiz logic
-// nav buttons 
-const next = document.querySelector('.quiz__nav_next');
-const prev = document.querySelector('.quiz__nav_prev');
+
 // all quiz questions
 const questions = document.querySelectorAll('.quiz__item');
-// numbers of questions 
-const questionsNumbers = document.querySelectorAll('.quiz__number');
-// quiz container
-const quizContainer = document.querySelector('.quiz__container')
-// quiz form 
-const quizForm = document.querySelector('.form');
-//quiz present 
-const quizPresent = document.querySelector('.quiz__present')
-let currentQuestionIndex = 0;
 
-next.addEventListener('click', () => {
-	currentQuestionIndex++;
-	const increaseValue = Math.min(currentQuestionIndex, questions.length);
-	if (increaseValue > 0) {
-		prev.classList.remove('hidden');
+if(questions.length > 0) {
+	// numbers of questions 
+	const questionsNumbers = document.querySelectorAll('.quiz__number');
+	// quiz container
+	const quizContainer = document.querySelector('.quiz__container')
+	// quiz form 
+	const quizForm = document.querySelector('.form-box');
+	//quiz present 
+	const quizPresent = document.querySelector('.quiz__present')
+	// nav buttons 
+	const next = document.querySelector('.quiz__nav_next');
+	const prev = document.querySelector('.quiz__nav_prev');
+
+	let currentQuestionIndex = 0;
+	next.addEventListener('click', () => {
+		currentQuestionIndex++;
+		const increaseValue = Math.min(currentQuestionIndex, questions.length);
+		if (increaseValue > 0) {
+			prev.classList.remove('hidden');
+		}
+		showCurrentQuestion(increaseValue);
+		showCurrentNumber(increaseValue);
+	})
+	
+	prev.addEventListener('click', () => {
+		currentQuestionIndex--;
+		const decreaseValue = Math.max(0, currentQuestionIndex);
+		if (decreaseValue === 0) {
+			prev.classList.add('hidden');
+		}
+		showCurrentQuestion(decreaseValue);
+		showCurrentNumber(decreaseValue);
+	})
+	
+	const showCurrentQuestion = (number) => {
+		const currentQuestion = [...questions].find((item, index) => index === number);
+		questions.forEach((q, index) => q.classList.remove('active'));
+		if (currentQuestion) {
+			console.log('if')
+			currentQuestion.classList.add('active');
+		} else {
+			console.log('else')
+			quizContainer.classList.add('hidden');
+			quizForm.classList.remove('hidden');
+			quizPresent.classList.add('hidden')
+		}
 	}
-	showCurrentQuestion(increaseValue);
-	showCurrentNumber(increaseValue);
-})
-
-prev.addEventListener('click', () => {
-	currentQuestionIndex--;
-	const decreaseValue = Math.max(0, currentQuestionIndex);
-	if (decreaseValue === 0) {
-		prev.classList.add('hidden');
-	}
-	showCurrentQuestion(decreaseValue);
-	showCurrentNumber(decreaseValue);
-})
-
-const showCurrentQuestion = (number) => {
-	const currentQuestion = [...questions].find((item, index) => index === number);
-	questions.forEach((q, index) => q.classList.remove('active'));
-	if (currentQuestion) {
-		currentQuestion.classList.add('active');
-	} else {
-		quizContainer.classList.add('hidden');
-		quizForm.classList.remove('hidden');
-		quizPresent.classList.add('hidden')
+	
+	const showCurrentNumber = (number) => {
+		const currentNumber = [...questionsNumbers].find((item, index) => index === number);
+		questionsNumbers.forEach(n => n.classList.remove('active'))
+		if (currentNumber) {
+			currentNumber.classList.add('active')
+		}
+	
 	}
 }
 
-const showCurrentNumber = (number) => {
-	const currentNumber = [...questionsNumbers].find((item, index) => index === number);
-	questionsNumbers.forEach(n => n.classList.remove('active'))
-	if (currentNumber) {
-		currentNumber.classList.add('active')
-	}
 
-}
 
 // accordion for questions and answers
 
@@ -178,21 +186,20 @@ for(let btn of formButtons) {
 			const postData =  async () => {
 				const formData = new FormData(currentForm);
 				const url = currentForm.dataset.name === 'quizForm' ? '/quiz.php' : '/mail.php'
-				console.log('url',url)
+				currentForm.innerHTML = `<div class="lds-spinner form__spinner"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>`
+		
 				const response = await fetch(url, {
 							method: 'POST',
 							body: formData
 						});
 				
 				const resp = await response;
-				console.log('resp', resp);
-				currentForm.innerHTML = `<div class="lds-spinner form__spinner"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>`
 				if(resp?.status === 200 && resp.ok) {
 					currentForm.classList.add('hidden');
 					currentForm.nextElementSibling.classList.remove('hidden');
 					
 				} else {
-					currentForm.classList.add('error');
+					currentForm.innerHTML = `<div> Произошла ошибка </div>`
 				}
 				return resp
 			}
@@ -203,4 +210,71 @@ for(let btn of formButtons) {
 	})
 }
 
+// sticky header on scroll
+// When the user scrolls the page, execute myFunction
+window.onscroll = function() {myFunction()};
+
+// Get the header
+const header = document.querySelector('.header');
+
+// Get the offset position of the navbar
+const sticky = header.offsetTop;
+let lastScroll = 0
+header.style.paddingTop = `${header.querySelector('.header__inner').clientHeight}px`
+// Add the sticky class to the header when you reach its scroll position. Remove "sticky" when you leave the scroll position
+function myFunction() {
+	
+  if (window.pageYOffset > sticky) {
+    header.classList.add("sticky");
+  } else {
+    header.classList.remove("sticky");
+  }
+	
+	const currentScroll = window.pageYOffset;
+  if (currentScroll <= 0) {
+    body.classList.remove('scrollUp');
+    return;
+  }
+
+  if (currentScroll > lastScroll && !body.classList.contains('scrollDown')) {
+    body.classList.remove('scrollUp');
+    body.classList.add('scrollDown');
+  } else if (
+    currentScroll + 3 < lastScroll &&
+    body.classList.contains('scrollDown')
+  ) {
+    body.classList.remove('scrollDown');
+    body.classList.add('scrollUp');
+  }
+  lastScroll = currentScroll;
+	
+
+}
+
+
+
+const wrapMap = document.querySelector('.main-contacts__map');
+console.log('wrapMap', wrapMap)
+
+wrapMap.addEventListener('click', ()  => {
+	console.log('wrapMap.children',wrapMap.children[0])
+	// убираем атрибут "style", в котором прописано свойство "pointer-events"
+	wrapMap.children[0].removeAttribute('style');
+	
+	wrapMap.classList.remove('mouse-enter')
+}) 
+
+wrapMap.addEventListener('mouseenter', () => {
+	wrapMap.classList.add('mouse-enter')
+}) 
+
+wrapMap.addEventListener('mouseout', () => {
+	wrapMap.classList.remove('mouse-enter')
+}) 
+
+
+
+	// двигаем подсказку по области карты вместе с мышкой пользователя
+	// if(event.offsetY > 10) mapTitle.style.top = event.offsetY + 20 + 'px';
+	// if(event.offsetX > 10) mapTitle.style.left = event.offsetX + 20 + 'px';
 

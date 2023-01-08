@@ -17,146 +17,67 @@
 	<link rel="stylesheet" href="css/styles.css">
 </head>
 
+<script>
+	
+window.onload = () => {
+    // устанавливаем настройки
+    const options = {
+        // родитель целевого элемента - область просмотра
+        root: document.querySelector('.section main-contacts'),
+        // без отступов
+        rootMargin: '0px',
+        // процент пересечения - половина изображения
+        threshold: 0
+    }
+
+    // создаем наблюдатель
+    const observer = new IntersectionObserver((entries, observer) => {
+        // для каждой записи-целевого элемента
+        entries.forEach(entry => {
+            // если элемент является наблюдаемым
+            if (entry.isIntersecting) {
+                const lazyImg = entry.target
+                // выводим информацию в консоль - проверка работоспособности наблюдателя
+                console.log(lazyImg)
+                // меняем фон контейнера
+                lazyImg.innerHTML = `<iframe style="pointer-events: none;" src="https://yandex.ru/map-widget/v1/?um=constructor%3A7549916f7fa73e801357efedf69e79dc2d834cf05986a05bfd15e36338ef9054&amp;source=constructor" width="100%"  height="430" frameborder="0"></iframe>`
+                // прекращаем наблюдение
+                observer.unobserve(lazyImg)
+            }
+        })
+    }, options)
+
+    const map = document.querySelector('.main-contacts__map')
+   
+    observer.observe(map)
+  
+}
+</script>
+
 <body id="body">
 
 	<header class="header main">
-		<div class="wrapper">
-			<div class="header__top">
-				<a href="#" rel="nofollow" class="header__logo">
-					<img src="images/logo.svg" alt="Логотип компании vitaCompany">
-				</a>
-				<ul class="header__menu">
-					<li class="header__menu_item sub-menu">
-						<div class="header__menu_box">
-							<span></span>
-							<span></span>
-							<span></span>
-						</div>
-						<p>Услуги</p>
-						<ul class="header__menu_inner">
-							<li class="header__menu_subitem design">
-								<p>Дизайн</p>
-								<svg width="20" height="20">
-									<use xlink:href="images/sprites.svg#arrow" />
-								</svg>
-								<ul class="header__menu_innermenu design">
-									<li>
-										<a href="/dizajn-interera-doma.html" rel="nofollow">
-											Дизайн интерьера дома
-										</a>
-									</li>
-									<li>
-										<a href="/dizajn-interera-kvartir.html" rel="nofollow">
-											Дизайн интерьера квартир
-										</a>
-									</li>
-									<li>
-										<a href="/dizajn-interera-kafe.html" rel="nofollow">
-											Дизайн интерьера кафе
-										</a>
-									</li>
-									<li>
-										<a href="/dizajn-interera-ofisov.html" rel="nofollow">
-											Дизайн интерьера офисов
-										</a>
-									</li>
-									<li>
-										<a href="/dizajn-interera-kovorkingov.html" rel="nofollow">
-											Дизайн интерьера коворкингов
-										</a>
-									</li>
-								</ul>
-							</li>
-							<li class="header__menu_subitem remont">
-								<p>Ремонт</p>
-								<svg width="20" height="20">
-									<use xlink:href="images/sprites.svg#arrow" />
-								</svg>
-								<ul class="header__menu_innermenu remont">
-									<li>
-										<a href="/remont-domov-i-kottedzhej" rel="nofollow">
-											Ремонт домов и коттеджей
-										</a>
-									</li>
-									<li>
-										<a href="/remont-kvartir.html" rel="nofollow">
-											Ремонт квартир
-										</a>
-									</li>
-									<li>
-										<a href="/chernovoj-remont-kvartir.html" rel="nofollow">
-											Черновой ремонт квартир
-										</a>
-									</li>
-									<li>
-										<a href="/kosmeticheskij-remont-kvartir.html" rel="nofollow">
-											Косметический ремонт квартир
-										</a>
-									</li>
-									<li>
-										<a href="/kapitalnyij-remont-kvartir.html" rel="nofollow">
-											Капитальный ремонт квартир
-										</a>
-									</li>
-								</ul>
-							</li>
-						</ul>
-					</li>
-					<li class="header__menu_item">
-						<a class="header__menu_link" href="/nashi-rabotyi.html" rel="nofollow">
-							Наши работы
-						</a>
-					</li>
-					<li class="header__menu_item">
-						<a class="header__menu_link" href="/stoimost.html" rel="nofollow">
-							Стоимость
-						</a>
-					</li>
-					<li class="header__menu_item">
-						<a class="header__menu_link" href="/o-kompanii.html" rel="nofollow">
-							О компании
-						</a>
-					</li>
-					<li class="header__menu_item">
-						<a class="header__menu_link" href="/otzyivyi.html" rel="nofollow">
-							Отзывы
-						</a>
-					</li>
-					<li class="header__menu_item">
-						<a class="header__menu_link" href="/kontaktyi.html" rel="nofollow">
-							Контакты
-						</a>
-					</li>
-				</ul>
-				<div class="header__phone desctop modal-js">
-					<svg width="23" height="23">
-						<use xlink:href="images/sprites.svg#phone" />
-					</svg>
-					+ 7 (499) 677-48-17
-				</div>
-				<a href="tel:+74996774817" class="header__phone mobile">
-					<svg width="23" height="23">
-						<use xlink:href="images/sprites.svg#phone" />
-					</svg>
-					+ 7 (499) 677-48-17
-				</a>
-				<div class="mobile-menu-button">
-					<span></span>
-					<span></span>
-					<span></span>
-				</div>
-				<div class="mobile-menu">
-					<ul class="mobile-menu__list">
-						<li class="mobile-menu__item sub-menu">
-							<ul class="mobile-menu__inner">
-								<li class="mobile-menu__subitem design subitem-js">
-									<p>
-										<svg width="20" height="20">
-											<use xlink:href="images/sprites.svg#arrow" />
-										</svg>
-										Дизайн
-									</p>
-									<ul class="mobile-menu__innermenu design">
+		<div class="header__inner">
+			<div class="wrapper">
+				<div class="header__top">
+					<a href="/" rel="nofollow" class="header__logo">
+						<img src="images/logo.svg" alt="Логотип компании vitaCompany">
+					</a>
+					<ul class="header__menu">
+						<li class="header__menu_item sub-menu">
+							<div class="header__menu_box">
+								<span></span>
+								<span></span>
+								<span></span>
+							</div>
+							<p>Услуги</p>
+							<ul class="header__menu_inner">
+								<li class="header__menu_subitem design">
+									<p>Дизайн</p>
+									<svg width="20" height="20">
+										<use xlink:href="images/sprites.svg#arrow" />
+									</svg>
+									<ul class="header__menu_innermenu design">
 										<li>
 											<a href="/dizajn-interera-doma.html" rel="nofollow">
 												Дизайн интерьера дома
@@ -184,14 +105,12 @@
 										</li>
 									</ul>
 								</li>
-								<li class="mobile-menu__subitem remont subitem-js">
-									<p>
-										<svg width="20" height="20">
-											<use xlink:href="images/sprites.svg#arrow" />
-										</svg>
-										Ремонт
-									</p>
-									<ul class="mobile-menu__innermenu remont">
+								<li class="header__menu_subitem remont">
+									<p>Ремонт</p>
+									<svg width="20" height="20">
+										<use xlink:href="images/sprites.svg#arrow" />
+									</svg>
+									<ul class="header__menu_innermenu remont">
 										<li>
 											<a href="/remont-domov-i-kottedzhej" rel="nofollow">
 												Ремонт домов и коттеджей
@@ -221,39 +140,160 @@
 								</li>
 							</ul>
 						</li>
-						<li class="mobile-menu__item">
+						<li class="header__menu_item">
 							<a class="header__menu_link" href="/nashi-rabotyi.html" rel="nofollow">
 								Наши работы
 							</a>
 						</li>
-						<li class="mobile-menu__item">
+						<li class="header__menu_item">
 							<a class="header__menu_link" href="/stoimost.html" rel="nofollow">
 								Стоимость
 							</a>
 						</li>
-						<li class="mobile-menu__item">
+						<li class="header__menu_item">
 							<a class="header__menu_link" href="/o-kompanii.html" rel="nofollow">
 								О компании
 							</a>
 						</li>
-						<li class="mobile-menu__item">
+						<li class="header__menu_item">
 							<a class="header__menu_link" href="/otzyivyi.html" rel="nofollow">
 								Отзывы
 							</a>
 						</li>
-						<li class="mobile-menu__item">
+						<li class="header__menu_item">
 							<a class="header__menu_link" href="/kontaktyi.html" rel="nofollow">
 								Контакты
 							</a>
 						</li>
 					</ul>
+					<div class="header__phone desctop modal-js">
+						<svg width="23" height="23">
+							<use xlink:href="images/sprites.svg#phone" />
+						</svg>
+						+ 7 (499) 677-48-17
+					</div>
+					<a href="tel:+74996774817" class="header__phone mobile">
+						<svg width="23" height="23">
+							<use xlink:href="images/sprites.svg#phone" />
+						</svg>
+						+ 7 (499) 677-48-17
+					</a>
+					<div class="mobile-menu-button white">
+						<span></span>
+						<span></span>
+						<span></span>
+					</div>
+					<div class="mobile-menu">
+						<ul class="mobile-menu__list">
+							<li class="mobile-menu__item sub-menu">
+								<ul class="mobile-menu__inner">
+									<li class="mobile-menu__subitem design subitem-js">
+										<p>
+											<svg width="20" height="20">
+												<use xlink:href="images/sprites.svg#arrow" />
+											</svg>
+											Дизайн
+										</p>
+										<ul class="mobile-menu__innermenu design">
+											<li>
+												<a href="/dizajn-interera-doma.html" rel="nofollow">
+													Дизайн интерьера дома
+												</a>
+											</li>
+											<li>
+												<a href="/dizajn-interera-kvartir.html" rel="nofollow">
+													Дизайн интерьера квартир
+												</a>
+											</li>
+											<li>
+												<a href="/dizajn-interera-kafe.html" rel="nofollow">
+													Дизайн интерьера кафе
+												</a>
+											</li>
+											<li>
+												<a href="/dizajn-interera-ofisov.html" rel="nofollow">
+													Дизайн интерьера офисов
+												</a>
+											</li>
+											<li>
+												<a href="/dizajn-interera-kovorkingov.html" rel="nofollow">
+													Дизайн интерьера коворкингов
+												</a>
+											</li>
+										</ul>
+									</li>
+									<li class="mobile-menu__subitem remont subitem-js">
+										<p>
+											<svg width="20" height="20">
+												<use xlink:href="images/sprites.svg#arrow" />
+											</svg>
+											Ремонт
+										</p>
+										<ul class="mobile-menu__innermenu remont">
+											<li>
+												<a href="/remont-domov-i-kottedzhej" rel="nofollow">
+													Ремонт домов и коттеджей
+												</a>
+											</li>
+											<li>
+												<a href="/remont-kvartir.html" rel="nofollow">
+													Ремонт квартир
+												</a>
+											</li>
+											<li>
+												<a href="/chernovoj-remont-kvartir.html" rel="nofollow">
+													Черновой ремонт квартир
+												</a>
+											</li>
+											<li>
+												<a href="/kosmeticheskij-remont-kvartir.html" rel="nofollow">
+													Косметический ремонт квартир
+												</a>
+											</li>
+											<li>
+												<a href="/kapitalnyij-remont-kvartir.html" rel="nofollow">
+													Капитальный ремонт квартир
+												</a>
+											</li>
+										</ul>
+									</li>
+								</ul>
+							</li>
+							<li class="mobile-menu__item">
+								<a class="header__menu_link" href="/nashi-rabotyi.html" rel="nofollow">
+									Наши работы
+								</a>
+							</li>
+							<li class="mobile-menu__item">
+								<a class="header__menu_link" href="/stoimost.html" rel="nofollow">
+									Стоимость
+								</a>
+							</li>
+							<li class="mobile-menu__item">
+								<a class="header__menu_link" href="/o-kompanii.html" rel="nofollow">
+									О компании
+								</a>
+							</li>
+							<li class="mobile-menu__item">
+								<a class="header__menu_link" href="/otzyivyi.html" rel="nofollow">
+									Отзывы
+								</a>
+							</li>
+							<li class="mobile-menu__item">
+								<a class="header__menu_link" href="/kontaktyi.html" rel="nofollow">
+									Контакты
+								</a>
+							</li>
+						</ul>
+					</div>
+				</div>
+				<div class="header__line">
+					<p>Делаем ремонт и разрабатываем уникальные дизайн-проекты</p>
+					<p class="modal-js">Перезвонить мне</p>
 				</div>
 			</div>
-			<div class="header__line">
-				<p>Делаем ремонт и разрабатываем уникальные дизайн-проекты</p>
-				<p class="modal-js">Перезвонить мне</p>
-			</div>
 		</div>
+		
 		<div class="offer">
 			<div class="wrapper">
 				<div class="offer__title">
@@ -443,7 +483,7 @@
 				</div>
 				<div class="quiz__content">
 					<div class="quiz__body">
-						<form data-name="quizForm" >
+						<form data-name="quizForm" class="form">
 							<div class="quiz__container">
 								<ul class="quiz__numbers">
 									<li class="quiz__number active">01</li>
@@ -532,10 +572,10 @@
 									<div class="quiz__nav_arrow quiz__nav_next "></div>
 								</div>
 							</div>
-							<div class="form hidden">
+							<div class="form-box hidden">
 								<h3>Мы приступаем к расчету Вашего ремонта!</h3>
 								<p>Для получения персональной скидки укажите Ваши данные:</p>
-								<div class="form__field field-phone">
+								<div class="form__field field-name">
 									<input type="text" data-name="formName" placeholder="Ваше имя" name="name" class="form__item">
 								</div>
 								<div class="form__field field-phone">
@@ -648,7 +688,7 @@
 					<div class="form__field field-name">
 						<input type="text" data-name="formName" placeholder="Ваше имя" name="name" class="form__item">
 					</div>
-					<div class="form__field field-name">
+					<div class="form__field field-phone">
 						<input type="phone" data-name="formPhone" placeholder="Номер телефона" name="phone" class="form__item">
 					</div>
 					<p class="form__label">
@@ -872,10 +912,7 @@
 				<div class="main-contacts__img">
 					<img src="images/mainpage/contact.webp" alt="шоурум">
 				</div>
-				<div class="main-contacts__map">
-					<script type="text/javascript" charset="utf-8" async
-						src="https://api-maps.yandex.ru/services/constructor/1.0/js/?um=constructor%3A52477d6df0ca18c0e954fd86191f1c8e0ad96ae4ec07eb43779e97405b35d050&amp;width=100%25&amp;height=430&amp;lang=ru_RU&amp;scroll=false"></script>
-				</div>
+				<div class="main-contacts__map"></div>
 			</div>
 		</div>
 	</section>
@@ -895,7 +932,7 @@
 					<div class="form__field field-name">
 						<input type="text" data-name="formName" placeholder="Ваше имя" name="name" class="form__item">
 					</div>
-					<div class="form__field field-name">
+					<div class="form__field field-phone">
 						<input type="text" data-name="formPhone" placeholder="Номер телефона" name="phone" class="form__item">
 					</div>
 					<p class="form__label">
