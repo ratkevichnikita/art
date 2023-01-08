@@ -297,6 +297,13 @@
 		max-width: 90%;
 	}
 
+	.overlay {
+		position: static;
+		&:before {
+			display: none;
+		}
+	}
+
 	
 }
 
@@ -378,7 +385,11 @@
 		}
 	}
 
-
+	.reviews {
+		&__item {
+			max-width: 100%;
+		}
+	}
 	
 }
 
@@ -553,7 +564,11 @@
 	.clients h2:before {
     width: 256px;
     height: 55px;
-}
+	}
+
+	.reviews-img {
+		height: 100%;
+	}
 	
 }
 
