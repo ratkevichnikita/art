@@ -160,6 +160,29 @@
 		}
 	}
 
+	.advantages__item {
+    width: 50%;
+	}
+
+	.offer {
+		&.inner {
+			position: relative;
+		}
+		&__title {
+			position: relative;
+			z-index: 2;
+		}
+		&__aboutimg {
+			position: absolute;
+			left: 0;
+			top: 0;
+			width: 100%;
+			height: 100%;
+			z-index: 1;
+			opacity: 0.2;
+		}
+	}
+
 	.allprojects__slider_info p:nth-child(2) {
     font-size: 18px;
     line-height: 24px;
@@ -286,12 +309,12 @@
 		}
 	}
 
-
 	.quiz {
 		.form__item {
 			max-width: 85%;
 		}
 	}
+
 	.section {
     padding: 80px 0;
 	}
@@ -300,6 +323,11 @@
 		&__title {
 			margin-bottom: 30px;
 		}
+	}
+
+	.clients h2:before {
+    width: 336px;
+    height: 75px;
 	}
 
 	.questions {
@@ -332,7 +360,23 @@
     height: 80px;
     left: -32px;
     top: -23px;
-}
+	}
+
+	.advantages__item {
+    width: 100%;
+		&:nth-child(2) {
+			border: none;
+		}
+		svg {
+			margin-bottom: 15px;
+		}
+	}
+
+	.stats__item  {
+		span {
+			font-size: 55px;
+		}
+	}
 
 
 	
@@ -495,6 +539,21 @@
 			width: 200px;
 		}
 	}
+
+	.advantages {
+		&__title {
+			margin-bottom: 30px;
+		}
+	}
+
+	.offer__aboutimg {
+		height: 95%;
+	}
+
+	.clients h2:before {
+    width: 256px;
+    height: 55px;
+}
 	
 }
 

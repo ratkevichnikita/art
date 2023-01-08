@@ -1,12 +1,15 @@
+//global variables
+body = document.body;
+
 // show / hidden header menu on hover
 const menuButton = document.querySelector('.header__menu_item.sub-menu');
 
 menuButton.addEventListener('mouseenter', () => {
-	menuButton.classList.add('active')
+	menuButton.classList.add('active');
 })
 
 menuButton.addEventListener('mouseleave', () => {
-	menuButton.classList.remove('active')
+	menuButton.classList.remove('active');
 })
 // ---------------------
 
@@ -19,11 +22,11 @@ if(questions.length > 0) {
 	// numbers of questions 
 	const questionsNumbers = document.querySelectorAll('.quiz__number');
 	// quiz container
-	const quizContainer = document.querySelector('.quiz__container')
+	const quizContainer = document.querySelector('.quiz__container');
 	// quiz form 
 	const quizForm = document.querySelector('.form-box');
 	//quiz present 
-	const quizPresent = document.querySelector('.quiz__present')
+	const quizPresent = document.querySelector('.quiz__present');
 	// nav buttons 
 	const next = document.querySelector('.quiz__nav_next');
 	const prev = document.querySelector('.quiz__nav_prev');
@@ -211,8 +214,7 @@ for(let btn of formButtons) {
 }
 
 // sticky header on scroll
-// When the user scrolls the page, execute myFunction
-window.onscroll = function() {myFunction()};
+window.onscroll = function() {stickyHeader()};
 
 // Get the header
 const header = document.querySelector('.header');
@@ -222,7 +224,7 @@ const sticky = header.offsetTop;
 let lastScroll = 0
 header.style.paddingTop = `${header.querySelector('.header__inner').clientHeight}px`
 // Add the sticky class to the header when you reach its scroll position. Remove "sticky" when you leave the scroll position
-function myFunction() {
+const stickyHeader = () => {
 	
   if (window.pageYOffset > sticky) {
     header.classList.add("sticky");
@@ -254,23 +256,24 @@ function myFunction() {
 
 
 const wrapMap = document.querySelector('.main-contacts__map');
-console.log('wrapMap', wrapMap)
-
-wrapMap.addEventListener('click', ()  => {
-	console.log('wrapMap.children',wrapMap.children[0])
-	// убираем атрибут "style", в котором прописано свойство "pointer-events"
-	wrapMap.children[0].removeAttribute('style');
+if(wrapMap) {
+	wrapMap.addEventListener('click', ()  => {
+		console.log('wrapMap.children',wrapMap.children[0])
+		// убираем атрибут "style", в котором прописано свойство "pointer-events"
+		wrapMap.children[0].removeAttribute('style');
+		
+		wrapMap.classList.remove('mouse-enter')
+	}) 
 	
-	wrapMap.classList.remove('mouse-enter')
-}) 
+	wrapMap.addEventListener('mouseenter', () => {
+		wrapMap.classList.add('mouse-enter')
+	}) 
+	
+	wrapMap.addEventListener('mouseout', () => {
+		wrapMap.classList.remove('mouse-enter')
+	}) 
+}
 
-wrapMap.addEventListener('mouseenter', () => {
-	wrapMap.classList.add('mouse-enter')
-}) 
-
-wrapMap.addEventListener('mouseout', () => {
-	wrapMap.classList.remove('mouse-enter')
-}) 
 
 
 

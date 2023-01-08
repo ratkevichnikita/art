@@ -217,6 +217,9 @@ body {
 .header {
   position: relative;
   overflow: hidden;
+  &.bg {
+    background-color: #F3F3F3;
+  }
   &__inner {
     transition: 0.3s;
     position: fixed;
@@ -1550,7 +1553,79 @@ body {
 
 // ABOUT COMPANY PAGE - START ---
 
+.stats {
+  display: grid;
+  grid-template-columns: repeat(auto-fit,minmax(270px,1fr));
+  grid-gap: 20px;
+  &__item {
+    text-align: center;
+    span {
+      font-weight: 700;
+      font-size: 90px;
+      line-height: 1.5em;
+      text-align: center;
+      text-transform: uppercase;
+      color: #FBC062;
+    }
+    p {
+      font-size: 14px;
+      line-height: 1.5em;
+    }
+  }
+}
 
+.advantages {
+  &__title {
+    text-align: center;
+    margin-bottom: 60px;
+  }
+  &__list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin-bottom: 60px;
+  }
+  &__item {
+    width: 33%;
+    padding: 20px;
+    text-align: center;
+    &:nth-child(2) {
+      border-right: 1px solid #D8D8D8;
+      border-left: 1px solid #D8D8D8;
+    }
+    svg {
+      margin-bottom: 30px;
+    }
+    p {
+      max-width: 360px;
+      margin: 0 auto;
+      font-size: 14px;
+      line-height: 1.5em;
+    }
+  }
+  &__desc {
+    text-align: center;
+  }
+}
+
+.clients {
+  text-align: center;
+  h2 {
+    margin-bottom: 40px;
+    position: relative;
+    &:before {
+      content: '';
+      width: 436px;
+      height: 112px;
+      border-radius: 54%;
+      position: absolute;
+      left: 50%;
+      top: 0;
+      border: 1px solid #FFE3B5;
+      transform: matrix(0.99, -0.12, 0.12, 0.99, 0, 0) translate(-50%,-50%);
+    }
+  }
+}
 
 // ABOUT COMPANY PAGE - END ------
 
