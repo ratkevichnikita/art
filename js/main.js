@@ -221,8 +221,9 @@ const header = document.querySelector('.header');
 
 // Get the offset position of the navbar
 const sticky = header.offsetTop;
-let lastScroll = 0
-header.style.paddingTop = `${header.querySelector('.header__inner').clientHeight}px`
+let lastScroll = 0;
+header.style.paddingTop = `${header.querySelector('.header__inner').clientHeight}px`;
+header.style.height = `calc(100vh - ${header.querySelector('.header__inner').clientHeight}px)`;
 // Add the sticky class to the header when you reach its scroll position. Remove "sticky" when you leave the scroll position
 const stickyHeader = () => {
 	

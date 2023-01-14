@@ -7,51 +7,48 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<meta name="author" content="VitaCompany">
 	<meta property="og:title" content="Vita Company | Комплексный дизайн-ремонт с гарантией от 3-х лет">
-	<meta property="og:description" content="Разработаем комплексный дизайн-ремонт в квартире от 30 м² с гарантией на работу от 3 лет. 9 лет опыта. 250+ выполненных проектов.">
+	<meta property="og:description"
+		content="Разработаем комплексный дизайн-ремонт в квартире от 30 м² с гарантией на работу от 3 лет. 9 лет опыта. 250+ выполненных проектов.">
 	<meta property="og:type" content="article">
 	<meta property="og:image" content="./images/ogimage.jpeg">
-	<meta property="og:site_name" content="chinawall">
+	<meta property="og:site_name" content="vita-company">
 	<title>Vita Company | Комплексный дизайн-ремонт с гарантией от 3-х лет</title>
-	<meta name="description" content="Разработаем комплексный дизайн-ремонт в квартире от 30 м² с гарантией на работу от 3 лет. 9 лет опыта. 250+ выполненных проектов." />
+	<meta name="description"
+		content="Разработаем комплексный дизайн-ремонт в квартире от 30 м² с гарантией на работу от 3 лет. 9 лет опыта. 250+ выполненных проектов." />
 	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css" />
 	<link rel="stylesheet" href="css/styles.css">
 </head>
 
 <script>
-	
-window.onload = () => {
-    // устанавливаем настройки
-    const options = {
-        // родитель целевого элемента - область просмотра
-        root: document.querySelector('.section main-contacts'),
-        // без отступов
-        rootMargin: '0px',
-        // процент пересечения - половина изображения
-        threshold: 0
-    }
+	window.onload = () => {
+		// устанавливаем настройки
+		const options = {
+			// родитель целевого элемента - область просмотра
+			root: document.querySelector('.section main-contacts'),
+			// без отступов
+			rootMargin: '0px',
+			// процент пересечения 
+			threshold: 0
+		}
 
-    // создаем наблюдатель
-    const observer = new IntersectionObserver((entries, observer) => {
-        // для каждой записи-целевого элемента
-        entries.forEach(entry => {
-            // если элемент является наблюдаемым
-            if (entry.isIntersecting) {
-                const lazyImg = entry.target
-                // выводим информацию в консоль - проверка работоспособности наблюдателя
-                console.log(lazyImg)
-                // меняем фон контейнера
-                lazyImg.innerHTML = `<iframe style="pointer-events: none;" src="https://yandex.ru/map-widget/v1/?um=constructor%3A7549916f7fa73e801357efedf69e79dc2d834cf05986a05bfd15e36338ef9054&amp;source=constructor" width="100%"  height="430" frameborder="0"></iframe>`
-                // прекращаем наблюдение
-                observer.unobserve(lazyImg)
-            }
-        })
-    }, options)
+		// создаем наблюдатель
+		const observer = new IntersectionObserver((entries, observer) => {
+			// для каждой записи-целевого элемента
+			entries.forEach(entry => {
+				// если элемент является наблюдаемым
+				if (entry.isIntersecting) {
+					const yaMap = entry.target
+					yaMap.innerHTML = `<iframe style="pointer-events: none;" src="https://yandex.ru/map-widget/v1/?um=constructor%3A7549916f7fa73e801357efedf69e79dc2d834cf05986a05bfd15e36338ef9054&amp;source=constructor" width="100%"  height="430" frameborder="0"></iframe>`
+					// прекращаем наблюдение
+					observer.unobserve(yaMap)
+				}
+			})
+		}, options)
 
-    const map = document.querySelector('.main-contacts__map')
-   
-    observer.observe(map)
-  
-}
+		const map = document.querySelector('.main-contacts__map')
+		observer.observe(map)
+
+	}
 </script>
 
 <body id="body">
@@ -293,7 +290,7 @@ window.onload = () => {
 				</div>
 			</div>
 		</div>
-		
+
 		<div class="offer">
 			<div class="wrapper">
 				<div class="offer__title">
@@ -530,11 +527,14 @@ window.onload = () => {
 									<li class="quiz__item">
 										<h3>Какой вид ремонта требуется?</h3>
 										<div class="quiz__options">
-											<input type="radio" checked id="black" name="typeofRepair" value="Черновой ремонт" class="quiz__answer">
+											<input type="radio" checked id="black" name="typeofRepair" value="Черновой ремонт"
+												class="quiz__answer">
 											<label for="black" class="quiz__answer_label">Черновой ремонт</label>
-											<input type="radio" id="cosmetic" name="typeofRepair" value="Косметический ремонт" class="quiz__answer">
+											<input type="radio" id="cosmetic" name="typeofRepair" value="Косметический ремонт"
+												class="quiz__answer">
 											<label for="cosmetic" class="quiz__answer_label">Косметический ремонт</label>
-											<input type="radio" id="capital" name="typeofRepair" value="Капитальный ремонт" class="quiz__answer">
+											<input type="radio" id="capital" name="typeofRepair" value="Капитальный ремонт"
+												class="quiz__answer">
 											<label for="capital" class="quiz__answer_label">Капитальный ремонт</label>
 											<input type="radio" id="elite" name="typeofRepair" value="Элитный ремонт" class="quiz__answer">
 											<label for="elite" class="quiz__answer_label">Элитный ремонт</label>
@@ -543,26 +543,30 @@ window.onload = () => {
 									<li class="quiz__item">
 										<h3>Когда вы планируете начать ремонт?</h3>
 										<div class="quiz__options">
-											<input type="radio" checked id="day" name="timeofstart" value="В течение 3х дней" class="quiz__answer">
+											<input type="radio" checked id="day" name="timeofstart" value="В течение 3х дней"
+												class="quiz__answer">
 											<label for="day" class="quiz__answer_label">В течение 3х дней</label>
 											<input type="radio" id="month" name="timeofstart" value="В течение месяца" class="quiz__answer">
 											<label for="month" class="quiz__answer_label">В течение месяца</label>
 											<input type="radio" id="year" name="timeofstart" value="В течение полугода" class="quiz__answer">
 											<label for="year" class="quiz__answer_label">В течение полугода</label>
-											<input type="radio" id="moreyear" name="timeofstart" value="Более длительный срок" class="quiz__answer">
+											<input type="radio" id="moreyear" name="timeofstart" value="Более длительный срок"
+												class="quiz__answer">
 											<label for="moreyear" class="quiz__answer_label">Более длительный срок</label>
 										</div>
 									</li>
 									<li class="quiz__item">
 										<h3>Выберите ваш подарок:</h3>
 										<div class="quiz__options">
-											<input type="radio" id="photo" name="present" value="Фотосессию после ремонта" class="quiz__answer">
+											<input type="radio" id="photo" name="present" value="Фотосессию после ремонта"
+												class="quiz__answer">
 											<label for="photo" class="quiz__answer_label">Фотосессию после ремонта</label>
 											<input type="radio" checked id="discount" name="present" value="Скидка 10% на все дизайнерские
 											предметы интерьера в шоуруме" class="quiz__answer">
 											<label for="discount" class="quiz__answer_label">Скидка 10% на все дизайнерские
 												предметы интерьера в шоуруме</label>
-											<input type="radio" id="dinner" name="present" value="Ужин на двоих в ресторане" class="quiz__answer">
+											<input type="radio" id="dinner" name="present" value="Ужин на двоих в ресторане"
+												class="quiz__answer">
 											<label for="dinner" class="quiz__answer_label">Ужин на двоих в ресторане</label>
 										</div>
 									</li>
@@ -586,7 +590,7 @@ window.onload = () => {
 									<a href="/politics.pdf" target="_blank" rel="nofollow">
 										Политикой конфиденциальностити</a>
 								</p>
-								<button class="main-btn form-btn-js" type="sumbit" name="quiz">Получить подарок и скидку</button>
+								<button class="main-btn form-btn-js" type="sumbit" name="quiz">Получить скидку</button>
 							</div>
 						</form>
 						<div class="form-success hidden">
@@ -695,7 +699,7 @@ window.onload = () => {
 						Нажимая на эту кнопку Вы соглашаетесь с нашей
 						<a href="/politics.pdf" target="_blank" rel="nofollow">Политикой конфиденциальностити</a>
 					</p>
-					<button class="main-btn form-btn-js" name="send" type="sumbit">Получить подарок и скидку</button>
+					<button class="main-btn form-btn-js" name="send" type="sumbit">Получить скидку</button>
 				</form>
 				<div class="form-success hidden">
 					Спасибо. Форма отправлена
@@ -939,7 +943,7 @@ window.onload = () => {
 						Нажимая на эту кнопку Вы соглашаетесь с нашей
 						<a href="/politics.pdf" target="_blank" rel="nofollow"> Политикой конфиденциальностити</a>
 					</p>
-					<button class="main-btn form-btn-js" name="send" type="sumbit">Получить подарок и скидку</button>
+					<button class="main-btn form-btn-js" name="send" type="sumbit">Получить скидку</button>
 				</form>
 				<div class="form-success hidden">
 					Спасибо. Форма отправлена
@@ -967,17 +971,17 @@ window.onload = () => {
 					Перезвонить мне
 				</button>
 				<div class="footer__social">
-					<a href="#" target="_blank" rel="nofollow">
+					<a href="https://vk.com/club211313624" target="_blank" rel="nofollow">
 						<svg width="24" height="25">
 							<use xlink:href="images/sprites.svg#vk" />
 						</svg>
 					</a>
-					<a href="#" target="_blank" rel="nofollow">
+					<a href="https://t.me/vita_company_design" target="_blank" rel="nofollow">
 						<svg width="24" height="25">
-							<use xlink:href="images/sprites.svg#insta" />
+							<use xlink:href="images/sprites.svg#telega" />
 						</svg>
 					</a>
-					<a href="mailto:" target="_blank" rel="nofollow">
+					<a href="mailto:Info@vita-company.ru" target="_blank" rel="nofollow">
 						<svg width="24" height="25">
 							<use xlink:href="images/sprites.svg#mail" />
 						</svg>
@@ -1113,13 +1117,13 @@ window.onload = () => {
 					</p>
 				</div>
 				<div class="footer__down_item">
-					<a href="/dogovor.pdf" download class="footer__down_document">
-						Скачать образец договора
+					<a href="/dogovor-remont.pdf" target="_blank" rel="nofollow" class="footer__down_document">
+						Скачать образец договора на ремонт
 					</a>
 				</div>
 				<div class="footer__down_item">
-					<a href="/license.pdf" target="_blank" download class="footer__down_document">
-						Лицензия
+					<a href="/dogovor-design.pdf" target="_blank" rel="nofollow" class="footer__down_document">
+						Скачать образец договора на дизайн
 					</a>
 				</div>
 			</div>
@@ -1138,7 +1142,8 @@ window.onload = () => {
 					<input data-name="formName" type="text" placeholder="Ваше имя" name="name" class="form__item" required>
 				</div>
 				<div class="form__field field-phone">
-					<input data-name="formPhone" type="text" placeholder="Номер телефона" name="phone" class="form__item" required>
+					<input data-name="formPhone" type="text" placeholder="Номер телефона" name="phone" class="form__item"
+						required>
 				</div>
 				<p class="form__label">
 					Нажимая на эту кнопку Вы соглашаетесь с нашей
@@ -1147,7 +1152,7 @@ window.onload = () => {
 					</a>
 				</p>
 				<button class="main-btn form-btn-js" name="send" type="submit">
-					Получить подарок и скидку
+					Получить скидку
 				</button>
 			</form>
 			<div class="form-success hidden">

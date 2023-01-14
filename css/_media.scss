@@ -2,26 +2,33 @@
 	h1 {
 		font-size: 36px;
 	}
+
 	h2 {
 		font-size: 30px;
 	}
-	.section	{
+
+	.section {
 		padding: 100px 0;
 	}
+
 	.header {
 		&__menu {
 			display: none;
 		}
+
 		&__top {
 			padding-top: 15px;
 		}
+
 		&__logo {
 			width: 100px;
 		}
 	}
 
 	.section-form {
-		&.bg1, &.bg2 {
+
+		&.bg1,
+		&.bg2 {
 			background-position: 60% 50%;
 		}
 	}
@@ -30,6 +37,7 @@
 		&__info {
 			max-width: 550px;
 		}
+
 		&__img {
 			max-width: 410px;
 		}
@@ -39,37 +47,52 @@
 		&__list {
 			grid-template-columns: repeat(auto-fit, minmax(50%, 1fr));
 		}
+
 		&__item:nth-child(4),
 		&__item:nth-child(5),
 		&__item:nth-child(6) {
 			border-bottom: 1px solid #808080;
-		}	
+		}
+
 		&__item:nth-child(3) {
 			border-right: 1px solid #808080;
 		}
+
 		&__item:nth-child(2),
 		&__item:nth-child(4) {
 			border-right: none;
-		}	
+		}
 	}
 
 	.mobile-menu-button {
 		display: flex;
 	}
+
 	.hww__button {
 		margin: 40px auto 0;
 	}
 
 	.hww__title:after {
-    left: -39px;
-    top: -52px;
-    width: 369px;
-    height: 150px;
+		left: -39px;
+		top: -52px;
+		width: 369px;
+		height: 150px;
 	}
+
 	.footer {
 		.columns {
-			grid-template-columns: repeat(auto-fit,minmax(210px,1fr));
+			grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
 		}
+	}
+
+	.contacts {
+		&__row {
+			grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+		}
+	}
+
+	.ourworks__item {
+		max-width: 470px;
 	}
 
 }
@@ -89,6 +112,7 @@
 		&.desctop {
 			display: none;
 		}
+
 		&.mobile {
 			display: block;
 			margin: 60px auto 0;
@@ -99,10 +123,12 @@
 		&__content {
 			grid-template-columns: 100%;
 		}
+
 		&__present {
 			max-width: 229px;
 			margin-left: auto;
 			margin-top: -56px;
+
 			img {
 				right: 14px;
 				top: 32px;
@@ -120,6 +146,7 @@
 			max-width: 400px;
 			position: relative;
 		}
+
 		.form.color .form__item {
 			border: 1px solid #fff;
 		}
@@ -131,10 +158,16 @@
 				margin-bottom: 20px;
 			}
 		}
+
 		&__img {
 			display: none;
 		}
 	}
+
+	.ourworks__item {
+		max-width: 350px;
+	}
+
 
 
 }
@@ -143,9 +176,11 @@
 	h1 {
 		font-size: 26px;
 	}
+
 	h2 {
 		font-size: 20px;
 	}
+
 	h3 {
 		font-size: 18px;
 	}
@@ -155,23 +190,26 @@
 	}
 
 	.header {
-		&__line > p {
+		&__line>p {
 			max-width: 240px;
 		}
 	}
 
 	.advantages__item {
-    width: 50%;
+		width: 50%;
 	}
 
 	.offer {
 		&.inner {
 			position: relative;
+			height: 100%;
 		}
+
 		&__title {
 			position: relative;
 			z-index: 2;
 		}
+
 		&__aboutimg {
 			position: absolute;
 			left: 0;
@@ -184,8 +222,8 @@
 	}
 
 	.allprojects__slider_info p:nth-child(2) {
-    font-size: 18px;
-    line-height: 24px;
+		font-size: 18px;
+		line-height: 24px;
 	}
 
 	.allprojects__slider_info p {
@@ -193,39 +231,45 @@
 	}
 
 	.hww__title:after {
-    width: 270px;
-    height: 110px;
+		width: 270px;
+		height: 110px;
 	}
 
 	.quiz {
 		&__numbers {
 			width: 100%;
 		}
+
 		&__title {
 			p {
 				max-width: 350px;
 			}
 		}
+
 		&__answer {
 			&_label {
 				padding: 10px 15px;
 				font-size: 12px;
 			}
 		}
+
 		&__item {
 			min-height: 115px;
 		}
+
 		&__present {
 			p {
 				font-size: 12px;
 				line-height: 1.2em;
 				max-width: 150px;
+
 				&:before {
 					width: 210px;
 					height: 70px;
 				}
-				
+
 			}
+
 			img {
 				top: 10px;
 				width: 85px;
@@ -235,29 +279,31 @@
 	}
 
 	.quality {
-		&__info{
+		&__info {
 			&:before {
 				width: 550px;
 				height: 170px;
 				left: -30px;
 			}
+
 			&:after {
 				width: 527px;
 				height: 190px;
 				left: -30px;
+			}
 		}
-		}	
 	}
 
-	.section-form.bg1, 
+	.section-form.bg1,
 	.section-form.bg2 {
 		background-position: 90% 50%;
 		position: relative;
+
 		&:before {
 			content: '';
 			width: 100%;
 			height: 100%;
-			background-color: rgba(0,0,0,0.6);
+			background-color: rgba(0, 0, 0, 0.6);
 			position: absolute;
 			left: 0;
 			top: 0;
@@ -265,22 +311,25 @@
 	}
 
 	.adv__item p {
-    font-size: 14px;
+		font-size: 14px;
 	}
 
 	.questions {
 		&__title {
 			margin-bottom: 40px;
+
 			&:before {
 				width: 340px;
 				height: 95px;
 			}
 		}
-		&__item > p {
+
+		&__item>p {
 			font-size: 18px;
 			line-height: 1.2em;
 			padding: 10px;
 		}
+
 		&__box {
 			margin-left: 30px;
 		}
@@ -299,18 +348,37 @@
 
 	.overlay {
 		position: static;
+
 		&:before {
 			display: none;
 		}
 	}
 
-	
+	.ourworks__item {
+		max-width: 80%;
+		margin: 0 auto 20px;
+
+	}
+
+	.ourworks__info p:nth-child(2) {
+		font-size: 17px;
+		line-height: 29px;
+	}
+
+	.works-single {
+		&__box {
+			margin-bottom: 30px;
+		}
+	}
+
+
 }
 
 @media screen and (max-width: 540px) {
 
 	.header__phone.mobile {
 		font-size: 12px;
+
 		svg {
 			margin-right: 10px;
 		}
@@ -323,7 +391,11 @@
 	}
 
 	.section {
-    padding: 80px 0;
+		padding: 80px 0;
+	}
+
+	.works-single {
+		padding-bottom: 80px;
 	}
 
 	.section-form {
@@ -333,8 +405,8 @@
 	}
 
 	.clients h2:before {
-    width: 336px;
-    height: 75px;
+		width: 336px;
+		height: 75px;
 	}
 
 	.questions {
@@ -343,15 +415,17 @@
 				top: -50%;
 				width: 275px;
 				height: 75px;
-				
+
 			}
 		}
+
 		&__item.active {
 			.questions__box {
 				max-width: 100%;
 				margin-left: 12px;
 			}
 		}
+
 		&__content {
 			margin-bottom: 40px;
 			font-size: 14px;
@@ -359,27 +433,29 @@
 	}
 
 	.adv__item {
-    padding: 20px 5px;
+		padding: 20px 5px;
 	}
 
 	.hww__title:after {
-    width: 220px;
-    height: 80px;
-    left: -32px;
-    top: -23px;
+		width: 220px;
+		height: 80px;
+		left: -32px;
+		top: -23px;
 	}
 
 	.advantages__item {
-    width: 100%;
+		width: 100%;
+
 		&:nth-child(2) {
 			border: none;
 		}
+
 		svg {
 			margin-bottom: 15px;
 		}
 	}
 
-	.stats__item  {
+	.stats__item {
 		span {
 			font-size: 55px;
 		}
@@ -390,7 +466,7 @@
 			max-width: 100%;
 		}
 	}
-	
+
 }
 
 @media screen and (max-width: 480px) {
@@ -400,14 +476,15 @@
 			text-align: center;
 			margin: 0 auto;
 		}
+
 		.main-btn {
 			margin: 0 auto;
 		}
 	}
 
 	.quality__info {
-    text-align: center;
-    margin: 0 auto;
+		text-align: center;
+		margin: 0 auto;
 	}
 
 	.main-contacts__title {
@@ -430,13 +507,19 @@
 		padding: 60px 0;
 	}
 
+	.works-single {
+		padding-bottom: 60px;
+	}
+
 	.adv {
 		&__list {
 			grid-template-columns: repeat(auto-fit, minmax(100%, 1fr));
 		}
+
 		&__title {
 			margin: 0 auto 20px;
 		}
+
 		&__item {
 			span {
 				font-size: 26px;
@@ -445,8 +528,8 @@
 		}
 	}
 
-	.adv__item:nth-child(1), 
-	.adv__item:nth-child(3),  
+	.adv__item:nth-child(1),
+	.adv__item:nth-child(3),
 	.adv__item:nth-child(5) {
 		border-right: none;
 	}
@@ -455,13 +538,16 @@
 		&__content {
 			padding: 15px;
 		}
+
 		&__number {
 			font-size: 24px;
+
 			&.active:before {
 				width: 60px;
 				height: 30px;
 				left: -16px;
 			}
+
 			&last:after {
 				width: 25px;
 				height: 25px;
@@ -469,20 +555,25 @@
 				top: 18px;
 			}
 		}
+
 		&__container.hideen {
 			.quiz__present {
 				display: none;
 			}
 		}
+
 		&__options {
 			flex-wrap: wrap;
 		}
+
 		&__present {
 			margin-top: -45px;
+
 			p {
 				font-size: 10px;
 				line-height: 1.1em;
 				max-width: 90px;
+
 				&:before {
 					width: 130px;
 					height: 45px;
@@ -490,18 +581,20 @@
 					left: -22px;
 				}
 			}
+
 			img {
 				top: 21px;
 				width: 50px;
 				right: -20px
-			} 
+			}
 		}
+
 		&__answer_label {
 			padding: 5px 5px;
 			font-size: 12px;
 			width: 45%;
 		}
-			
+
 	}
 
 	.hww {
@@ -509,9 +602,11 @@
 			padding-left: 40px;
 			padding-bottom: 10px;
 			margin-bottom: 20px;
+
 			span {
 				font-size: 24px;
 			}
+
 			h3 {
 				margin-bottom: 10px;
 			}
@@ -519,15 +614,15 @@
 	}
 
 	.quality__info:before {
-    width: 250px;
-    height: 100px;
-    left: -30px;
+		width: 250px;
+		height: 100px;
+		left: -30px;
 	}
 
 	.quality__info:after {
-    width: 250px;
-    height: 100px;
-    left: -10px;
+		width: 250px;
+		height: 100px;
+		left: -10px;
 	}
 
 	.header {
@@ -539,7 +634,8 @@
 	.mobile-menu {
 		width: 100vw;
 		text-align: center;
-		&__subitem > p {
+
+		&__subitem>p {
 			justify-content: center;
 			margin-right: 10px;
 		}
@@ -562,14 +658,47 @@
 	}
 
 	.clients h2:before {
-    width: 256px;
-    height: 55px;
+		width: 256px;
+		height: 55px;
 	}
 
 	.reviews-img {
 		height: 100%;
 	}
-	
+
+	.contacts {
+		&__row {
+			margin-bottom: 30px;
+		}
+
+		&__title {
+			margin-bottom: 30px;
+		}
+
+		&__name {
+			font-size: 18px;
+			margin-bottom: 10px;
+		}
+
+		&__item {
+			font-size: 14px;
+		}
+	}
+
+	.ourworks__item {
+		max-width: 100%;
+	}
+
+	.ourworks__title {
+		margin-bottom: 40px;
+	}
+
+	.header {
+		&.ourworks {
+			min-height: 650px;
+		}
+	}
+
 }
 
 @media screen and (max-width: 370px) {
@@ -577,8 +706,10 @@
 		&__line {
 			display: none;
 		}
+
 		&__phone.mobile svg {
 			display: none;
 		}
+
 	}
 }
