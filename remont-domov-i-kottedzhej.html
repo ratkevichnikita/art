@@ -12,49 +12,14 @@
 	<meta property="og:type" content="article">
 	<meta property="og:image" content="./images/ogimage.jpeg">
 	<meta property="og:site_name" content="vita-company">
-	<title>Vita Company | Студия эпиляции Epil Future</title>
+	<title>Vita Company | Ремонт домов и коттеджей</title>
 	<meta name="description"
 		content="Разработаем комплексный дизайн-ремонт в квартире от 30 м² с гарантией на работу от 3 лет. 9 лет опыта. 250+ выполненных проектов." />
-
-	<link rel="stylesheet" href="css/lightgallery.css">
-	<link rel="stylesheet" href="css/lg-thumbnail.css">
-	<link rel="stylesheet" href="css/lg-zoom.css">
 	<link rel="stylesheet" href="css/styles.css">
 </head>
 
-<script>
-	window.onload = () => {
-		// устанавливаем настройки
-		const options = {
-			// родитель целевого элемента - область просмотра
-			root: null,
-			// без отступов
-			rootMargin: '0px',
-			// процент пересечения 
-			threshold: 0
-		}
-
-		// создаем наблюдатель
-		const observer = new IntersectionObserver((entries, observer) => {
-			// для каждой записи-целевого элемента
-			entries.forEach(entry => {
-				// если элемент является наблюдаемым
-				if (entry.isIntersecting) {
-					const lazyImg = entry.target;
-					lazyImg.classList.add('active')
-					// прекращаем наблюдение
-					observer.unobserve(lazyImg)
-				}
-			})
-		}, options)
-
-		const images = document.querySelectorAll('.works-single__item');
-		images.forEach(img => observer.observe(img))
-	}
-</script>
-
 <body class="inner-page">
-	<header class="header h-auto">
+	<header class="header h-auto bg">
 		<div class="header__inner">
 			<div class="wrapper">
 				<div class="header__top">
@@ -291,52 +256,147 @@
 				</div>
 			</div>
 		</div>
-		<div class="offer h-auto">
+		<div class="offer inner offer-design">
 			<div class="wrapper">
-				<div class="breadcrumbs">
-					<a href="/" rel="nofollow">Главная /</a>
-					<a href="/nashi-rabotyi.html" rel="nofollow">Наши работы /</a>
-					<p>Студия эпиляции Epil Future</p>
-				</div>
-			</div>
-		</div>
-		<div class="works-single">
-			<div class="wrapper">
-				<div class="works-single__title">
-					<div class="works-single__box">
-						<h1>Студия эпиляции Epil Future</h1>
-						<p>84м² / 50 дней / 210 000₽</p>
+				<div class="offer__inner  p-50 f-w-w align-center jcsb">
+					<div class="offer__title ">
+						<div class="breadcrumbs">
+							<a href="/" rel="nofollow">Главная /</a>
+							<p>Ремонт домов и коттеджей</p>
+						</div>
+						<h1>
+							Ремонт домов и коттеджей
+						</h1>
+						<p>
+							Замерщик приедет уже сегодня! <br>
+							Выезд бесплатный!
+						</p>
+
 					</div>
-					<a href="#" class="main-btn modal-js same-js">
-						Заказать подобное
-					</a>
-				</div>
-				<div id="studia-epiliacii" class="works-single__list">
-					<a href="images/studia-epiliacii/full/img1.jpg" class="works-single__item">
-						<img src="images/studia-epiliacii/img.jpg" alt="Студия эпиляции Epil Future">
-					</a>
-					<a href="images/studia-epiliacii/full/img2.jpg" class="works-single__item">
-						<img src="images/studia-epiliacii/img-1.jpg" alt="Студия эпиляции Epil Future">
-					</a>
-					<a href="images/studia-epiliacii/full/img3.jpg" class="works-single__item">
-						<img src="images/studia-epiliacii/img-2.jpg" alt="Студия эпиляции Epil Future">
-					</a>
-					<a href="images/studia-epiliacii/full/img4.jpg" class="works-single__item">
-						<img src="images/studia-epiliacii/img-3.jpg" alt="Студия эпиляции Epil Future">
-					</a>
-					<a href="images/studia-epiliacii/full/img5.jpg" class="works-single__item">
-						<img src="images/studia-epiliacii/img-4.jpg" alt="Студия эпиляции Epil Future">
-					</a>
-					<a href="images/studia-epiliacii/full/img6.jpg" class="works-single__item">
-						<img src="images/studia-epiliacii/img-5.jpg" alt="Студия эпиляции Epil Future">
-					</a>
-					<a href="images/studia-epiliacii/full/img7.jpg" class="works-single__item">
-						<img src="images/studia-epiliacii/img-6.jpg" alt="Студия эпиляции Epil Future">
-					</a>
+					<div class="offer__actions">
+						<p>от 18 000₽ / м²</p>
+						<a href="#" class="main-btn modal-js same-js">
+							заказать замер бесплатно
+						</a>
+					</div>
 				</div>
 			</div>
 		</div>
 	</header>
+
+	<section class="section ">
+		<div class="wrapper">
+			<div class="design-page">
+				<div class="design-page__info">
+					<h2>Ремонт домов и коттеджей</h2>
+					<p>
+						Оказываем услуги ремонта домов и коттеджей с внутренней отделкой помещения с 2014 года. Работаем с лидерами
+						рынка по строительным материалам: Finex, Orac Decor и San Marco. Предоставляем точный расчёт сметы,
+						соблюдение сроков, официальный оформленный договор и гарантии на работы сроком 3 года. Вы можете заказать
+						выезд замерщика абсолютно бесплатно и понять точную стоимость ремонта вашего дома, обсудить с дизайнерами
+						свои идеи и воплотить в жизнь мечту своего идеального дома
+					</p>
+				</div>
+				<div class="design-page__img">
+					<img src="images/remont/remont-doma.webp" alt="Ремонт домов и коттеджей">
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<section class="section bg">
+		<div class="wrapper">
+			<div class="works-list remont">
+				<div class="works-list__title">
+					<h2>Порядок и этапы ремонта / отделки</h2>
+					<p>Ниже мы расскажем об основных 15 этапах внутренней отделки.</p>
+				</div>
+				<ul class="works-list__items">
+					<li class="works-list__item">
+						1. Демонтажные работы (при необходимости);
+					</li>
+					<li class="works-list__item">
+						2. Возведение перегородок и конструкций;
+					</li>
+					<li class="works-list__item">
+						3. Выравнивание стен гипсовым составом или цементно-песчаным раствором;
+					</li>
+					<li class="works-list__item">
+						4. Разводка инженерных коммуникаций (отопление, водоснабжение, электрика, слаботочные сети);
+					</li>
+					<li class="works-list__item">
+						5. Заливка пола;
+					</li>
+					<li class="works-list__item">
+						6. Устройство потолочных конструкций из ГКЛВ;
+					</li>
+					<li class="works-list__item">
+						7. Плиточные работы;
+					</li>
+					<li class="works-list__item">
+						8. Малярные работы;
+					</li>
+					<li class="works-list__item">
+						9. Укладка напольного покрытия;
+					</li>
+					<li class="works-list__item">
+						10. Покрасочные работы;
+					</li>
+					<li class="works-list__item">
+						11. Установка дверей, монтаж плинтуса;
+					</li>
+					<li class="works-list__item">
+						12. Установка чистовых элементов сантехнического оборудования;
+					</li>
+					<li class="works-list__item">
+						13. Установка электрооборудования, подключение бытовой техники;
+					</li>
+					<li class="works-list__item">
+						14. Клининг;
+					</li>
+					<li class="works-list__item">
+						15. Сдача объекта заказчику.
+					</li>
+				</ul>
+				<button class="main-btn modal-js same-js remont-btn">
+					заказать замер бесплатно
+				</button>
+			</div>
+		</div>
+	</section>
+
+	<section class="section">
+		<div class="wrapper">
+			<div class="ourworks__title text-center">
+				<h2>Наши проекты</h2>
+			</div>
+			<div class="ourworks__list">
+
+				<div class="ourworks__item">
+					<div class="ourworks__img">
+						<img src="images/mainpage/project6.webp" alt="днокомнатная квартира в ЖК Тушино">
+					</div>
+					<div class="ourworks__info">
+						<p>84м² / 50 дней / 210 000₽</p>
+						<p>Студия эпиляции Epil Future</p>
+						<a href="/studia-epiliacii.html">Подробнее</a>
+					</div>
+				</div>
+
+				<div class="ourworks__item">
+					<div class="ourworks__img">
+						<img src="images/mainpage/project2.webp" alt="днокомнатная квартира в ЖК Тушино">
+					</div>
+					<div class="ourworks__info">
+						<p>135м² / 60 дней / 472 000₽</p>
+						<p>Трехкомнатная квартира в ЖК Суббота</p>
+						<a href="/subbota.html">Подробнее</a>
+					</div>
+				</div>
+
+			</div>
+		</div>
+	</section>
 
 	<section id="form" class="section section-form bg2">
 		<div class="wrapper">
@@ -619,21 +679,7 @@
 		</div>
 	</div>
 
-	<script src="js/lightgallery.umd.js"></script>
-	<script src="js/lightgallery.min.js"></script>
-	<script src="js/lg-thumbnail.umd.js"></script>
-	<script src="js/lg-zoom.umd.js"></script>
-
 	<script src="js/main.js"></script>
-
-	<script>
-		lightGallery(document.getElementById('studia-epiliacii'), {
-			plugins: [lgZoom],
-			speed: 500,
-			licenseKey: 'vitaCompany'
-			// ... other settings
-		});
-	</script>
 </body>
 
 </html>

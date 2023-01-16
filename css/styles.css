@@ -125,7 +125,10 @@ body.is-menu-open {
 body.is-modal-open {
   overflow: hidden;
 }
-body.is-modal-open .modal {
+body.is-modal-open.main .modal.main {
+  display: flex;
+}
+body.is-modal-open.same .modal.same {
   display: flex;
 }
 body.inner-page .header__menu_box > span {
@@ -152,6 +155,7 @@ body.scrollDown .header__inner {
 .main-btn {
   max-width: 220px;
   width: 100%;
+  min-width: 220px;
   height: 55px;
   color: #121212;
   font-weight: 600;
@@ -209,6 +213,26 @@ body.scrollDown .header__inner {
 }
 .buttonbg:hover svg {
   stroke: #232323;
+}
+
+.d-f {
+  display: flex;
+}
+
+.align-center {
+  align-items: center;
+}
+
+.jcsb {
+  justify-content: space-between;
+}
+
+.f-w-w {
+  flex-wrap: wrap;
+}
+
+.text-center {
+  text-align: center;
 }
 
 .section {
@@ -451,6 +475,9 @@ body.scrollDown .header__inner {
 .offer__inner {
   display: flex;
 }
+.offer__inner.p-50 {
+  padding: 50px 0;
+}
 .offer__title {
   max-width: 880px;
 }
@@ -462,6 +489,19 @@ body.scrollDown .header__inner {
 }
 .offer__title h1 {
   margin-bottom: 10px;
+}
+.offer__actions {
+  display: flex;
+  align-items: center;
+  max-width: 330px;
+  width: 100%;
+}
+.offer__actions p {
+  margin-right: 30px;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 1.5em;
+  flex-shrink: 0;
 }
 
 .allprojects__slider_info {
@@ -1227,7 +1267,7 @@ body.scrollDown .header__inner {
   display: flex;
   align-items: center;
   justify-content: center;
-  z-index: 100;
+  z-index: 999;
   display: none;
 }
 .modal__container {
@@ -1543,6 +1583,97 @@ body.scrollDown .header__inner {
   flex-wrap: wrap;
 }
 
+.design-page {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+.design-page__info {
+  max-width: 600px;
+  margin-right: 20px;
+}
+.design-page__info h2 {
+  margin-bottom: 30px;
+}
+.design-page__info p {
+  line-height: 1.5em;
+  margin-bottom: 10px;
+}
+.design-page__info ul {
+  padding-left: 15px;
+  margin-bottom: 10px;
+}
+.design-page__info li {
+  margin-bottom: 5px;
+}
+.design-page__info ul, .design-page__info li {
+  list-style-type: disc;
+}
+.design-page__img {
+  margin-bottom: 30px;
+}
+
+.works-list.remont {
+  counter-reset: my-count;
+}
+.works-list.remont .works-list__item {
+  counter-increment: my-count;
+  position: relative;
+}
+.works-list.remont .works-list__item:before {
+  display: none;
+}
+.works-list.remont .remont-btn {
+  margin: 40px 0 0;
+}
+.works-list__title {
+  position: relative;
+  margin-bottom: 60px;
+}
+.works-list__title h2 {
+  position: relative;
+  z-index: 10;
+}
+.works-list__title:before {
+  content: "";
+  position: absolute;
+  left: 10px;
+  top: -50px;
+  border-radius: 54%;
+  width: 459px;
+  height: 140px;
+  border: 1px solid #FBC267;
+  transform: rotate(-10.5deg);
+  z-index: 1;
+}
+.works-list__items {
+  -moz-column-count: 2;
+       column-count: 2;
+}
+.works-list__item {
+  max-width: 530px;
+  font-size: 20px;
+  line-height: 1.5em;
+  display: flex;
+  margin-bottom: 25px;
+  align-items: flex-start;
+  page-break-inside: avoid;
+  -moz-column-break-inside: avoid;
+       break-inside: avoid;
+}
+.works-list__item:before {
+  content: "";
+  width: 8px;
+  min-width: 8px;
+  flex-shrink: 0;
+  height: 8px;
+  display: inline-block;
+  margin-right: 10px;
+  margin-top: 12px;
+  background-color: #121212;
+  border-radius: 50%;
+}
+
 .breadcrumbs {
   display: flex;
   align-items: center;
@@ -1751,6 +1882,9 @@ body.scrollDown .header__inner {
   .ourworks__item {
     max-width: 470px;
   }
+  .design-page__img {
+    order: -1;
+  }
 }
 @media screen and (max-width: 992px) {
   .header__phone.mobile {
@@ -1939,6 +2073,19 @@ body.scrollDown .header__inner {
   .works-single__box {
     margin-bottom: 30px;
   }
+  .works-list__items {
+    -moz-column-count: 1;
+         column-count: 1;
+  }
+  .works-list__item {
+    max-width: 100%;
+  }
+  .works-list__title:before {
+    left: 0;
+    top: -50px;
+    width: 370px;
+    height: 100px;
+  }
 }
 @media screen and (max-width: 540px) {
   .header__phone.mobile {
@@ -1946,6 +2093,16 @@ body.scrollDown .header__inner {
   }
   .header__phone.mobile svg {
     margin-right: 10px;
+  }
+  .offer.inner.offer-design .offer__title {
+    margin: 0 auto;
+  }
+  .offer__actions {
+    flex-direction: column;
+    margin: 0 auto;
+  }
+  .offer__actions > p {
+    margin-bottom: 20px;
   }
   .quiz .form__item {
     max-width: 85%;
@@ -1999,6 +2156,9 @@ body.scrollDown .header__inner {
   }
   .reviews__item {
     max-width: 100%;
+  }
+  .works-list__item {
+    margin-bottom: 15px;
   }
 }
 @media screen and (max-width: 480px) {
@@ -2163,6 +2323,11 @@ body.scrollDown .header__inner {
   .header.ourworks {
     min-height: 650px;
   }
+  .works-list__title:before {
+    top: -28px;
+    width: 300px;
+    height: 80px;
+  }
 }
 @media screen and (max-width: 370px) {
   .header__line {
@@ -2170,5 +2335,8 @@ body.scrollDown .header__inner {
   }
   .header__phone.mobile svg {
     display: none;
+  }
+  .works-list__item {
+    font-size: 16px;
   }
 }/*# sourceMappingURL=styles.css.map */

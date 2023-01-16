@@ -12,49 +12,14 @@
 	<meta property="og:type" content="article">
 	<meta property="og:image" content="./images/ogimage.jpeg">
 	<meta property="og:site_name" content="vita-company">
-	<title>Vita Company | Студия эпиляции Epil Future</title>
+	<title>Vita Company | Дизайн интерьера офисов</title>
 	<meta name="description"
 		content="Разработаем комплексный дизайн-ремонт в квартире от 30 м² с гарантией на работу от 3 лет. 9 лет опыта. 250+ выполненных проектов." />
-
-	<link rel="stylesheet" href="css/lightgallery.css">
-	<link rel="stylesheet" href="css/lg-thumbnail.css">
-	<link rel="stylesheet" href="css/lg-zoom.css">
 	<link rel="stylesheet" href="css/styles.css">
 </head>
 
-<script>
-	window.onload = () => {
-		// устанавливаем настройки
-		const options = {
-			// родитель целевого элемента - область просмотра
-			root: null,
-			// без отступов
-			rootMargin: '0px',
-			// процент пересечения 
-			threshold: 0
-		}
-
-		// создаем наблюдатель
-		const observer = new IntersectionObserver((entries, observer) => {
-			// для каждой записи-целевого элемента
-			entries.forEach(entry => {
-				// если элемент является наблюдаемым
-				if (entry.isIntersecting) {
-					const lazyImg = entry.target;
-					lazyImg.classList.add('active')
-					// прекращаем наблюдение
-					observer.unobserve(lazyImg)
-				}
-			})
-		}, options)
-
-		const images = document.querySelectorAll('.works-single__item');
-		images.forEach(img => observer.observe(img))
-	}
-</script>
-
 <body class="inner-page">
-	<header class="header h-auto">
+	<header class="header h-auto bg">
 		<div class="header__inner">
 			<div class="wrapper">
 				<div class="header__top">
@@ -291,79 +256,286 @@
 				</div>
 			</div>
 		</div>
-		<div class="offer h-auto">
+		<div class="offer inner offer-design">
 			<div class="wrapper">
-				<div class="breadcrumbs">
-					<a href="/" rel="nofollow">Главная /</a>
-					<a href="/nashi-rabotyi.html" rel="nofollow">Наши работы /</a>
-					<p>Студия эпиляции Epil Future</p>
-				</div>
-			</div>
-		</div>
-		<div class="works-single">
-			<div class="wrapper">
-				<div class="works-single__title">
-					<div class="works-single__box">
-						<h1>Студия эпиляции Epil Future</h1>
-						<p>84м² / 50 дней / 210 000₽</p>
+				<div class="offer__inner  p-50 f-w-w align-center jcsb">
+					<div class="offer__title ">
+						<div class="breadcrumbs">
+							<a href="/" rel="nofollow">Главная /</a>
+							<p>Дизайн интерьера офисов</p>
+						</div>
+						<h1>
+							Дизайн интерьера офисов
+						</h1>
+						<p>
+							Замерщик приедет уже сегодня! <br>
+							Выезд бесплатный!
+						</p>
+
 					</div>
-					<a href="#" class="main-btn modal-js same-js">
-						Заказать подобное
-					</a>
-				</div>
-				<div id="studia-epiliacii" class="works-single__list">
-					<a href="images/studia-epiliacii/full/img1.jpg" class="works-single__item">
-						<img src="images/studia-epiliacii/img.jpg" alt="Студия эпиляции Epil Future">
-					</a>
-					<a href="images/studia-epiliacii/full/img2.jpg" class="works-single__item">
-						<img src="images/studia-epiliacii/img-1.jpg" alt="Студия эпиляции Epil Future">
-					</a>
-					<a href="images/studia-epiliacii/full/img3.jpg" class="works-single__item">
-						<img src="images/studia-epiliacii/img-2.jpg" alt="Студия эпиляции Epil Future">
-					</a>
-					<a href="images/studia-epiliacii/full/img4.jpg" class="works-single__item">
-						<img src="images/studia-epiliacii/img-3.jpg" alt="Студия эпиляции Epil Future">
-					</a>
-					<a href="images/studia-epiliacii/full/img5.jpg" class="works-single__item">
-						<img src="images/studia-epiliacii/img-4.jpg" alt="Студия эпиляции Epil Future">
-					</a>
-					<a href="images/studia-epiliacii/full/img6.jpg" class="works-single__item">
-						<img src="images/studia-epiliacii/img-5.jpg" alt="Студия эпиляции Epil Future">
-					</a>
-					<a href="images/studia-epiliacii/full/img7.jpg" class="works-single__item">
-						<img src="images/studia-epiliacii/img-6.jpg" alt="Студия эпиляции Epil Future">
-					</a>
+					<div class="offer__actions">
+						<p>от 2 000₽ / м²</p>
+						<a href="#quiz" class="main-btn go-to">
+							Заказать онлайн
+						</a>
+					</div>
 				</div>
 			</div>
 		</div>
 	</header>
 
-	<section id="form" class="section section-form bg2">
+	<section class="section ">
 		<div class="wrapper">
-			<div class="section-form__content">
-				<div class="section-form__title">
+			<div class="design-page">
+				<div class="design-page__info">
+					<h2>Дизайн интерьера офисов</h2>
+					<div>
+						<p>
+							А вы заметили как преобразились офисные помещения в последние 5-7 лет? Мы тоже! Скучные и строгие
+							интерьеры
+							уже ушли в прошлое, теперь офис для нас - это и оригинально, и стильно, и удобно и, порой, эпатажно.
+							О чём обязательно нужно помнить, так это про оформление рабочего пространства:
+						</p>
+						<ul>
+							<li>Освещение</li>
+							<li>Удалённость кабинетов друг от друга и общая планировка помещения</li>
+							<li>Удобная мебель, соответствующая всем стандартам</li>
+							<li>Необходимое количество мест для сотрудников и их приглашенных коллег</li>
+						</ul>
+						<p>
+							Мы соблюдаем все нюансы и требования к офисному помещению: от зонирования с учётом оформления пожарных
+							выходов до стилизации табличек на двери с указанием имени сотрудника)
+						</p>
+					</div>
+				</div>
+				<div class="design-page__img">
+					<img src="images/room-design/office.webp" alt="Дизайн интерьера офиса">
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<section class="section bg">
+		<div class="wrapper">
+			<div class="works-list">
+				<div class="works-list__title">
+					<h2>Перечень выполняемых работ</h2>
+				</div>
+				<ul class="works-list__items">
+					<li class="works-list__item">
+						Обмерный план
+					</li>
+					<li class="works-list__item">
+						Планировочные решения, план расстановки мебели и сантехники (не менее 3 вариантов)
+					</li>
+					<li class="works-list__item">
+						Схема дверей с указанием проемов и открывания
+					</li>
+					<li class="works-list__item">
+						Схема размещения сантехнических приборов с привязками (технические характеристики согласованной сантехники)
+					</li>
+					<li class="works-list__item">
+						План потолков с указанием типа материала
+					</li>
+					<li class="works-list__item">
+						План расстановки электрооборудования (розетки)
+					</li>
+					<li class="works-list__item">
+						План расположения плинтусов
+					</li>
+					<li class="works-list__item">
+						План полов с указанием типа покрытия и размеров
+					</li>
+					<li class="works-list__item">
+						План схема с указанием отделочных материалов (по стенам)
+					</li>
+					<li class="works-list__item">
+						Развертки стен всех помещений
+					</li>
+					<li class="works-list__item">
+						Габаритные чертежи заказной мебели
+					</li>
+					<li class="works-list__item">
+						Коллажи
+					</li>
+					<li class="works-list__item">
+						Эскизы будущего интерьера, предоставленные в виде "3D" фотореалистичного изображения все помещения по два –
+						три ракурса. Доступны 2 бесплатные правки
+					</li>
+				</ul>
+			</div>
+		</div>
+	</section>
+
+	<section class="section">
+		<div class="wrapper">
+			<div class="ourworks__title text-center">
+				<h2>Наши проекты</h2>
+			</div>
+			<div class="ourworks__list">
+
+				<div class="ourworks__item">
+					<div class="ourworks__img">
+						<img src="images/mainpage/project2.webp" alt="днокомнатная квартира в ЖК Тушино">
+					</div>
+					<div class="ourworks__info">
+						<p>135м² / 60 дней / 472 000₽</p>
+						<p>Трехкомнатная квартира в ЖК Суббота</p>
+						<a href="/subbota.html">Подробнее</a>
+					</div>
+				</div>
+
+				<div class="ourworks__item">
+					<div class="ourworks__img">
+						<img src="images/mainpage/project4.webp" alt="днокомнатная квартира в ЖК Тушино">
+					</div>
+					<div class="ourworks__info">
+						<p>64,8м² / 45 дней / 225 000₽</p>
+						<p>Двухкомнатная квартира в ЖК Скандинавия</p>
+						<a href="/skandinavia.html">Подробнее</a>
+					</div>
+				</div>
+
+			</div>
+		</div>
+	</section>
+
+	<section id="quiz" class="section bg">
+		<div class="wrapper">
+			<div class="quiz">
+				<div class="quiz__title">
 					<h2>
-						Получите подробную смету и точную стоимость Вашего ремонта
+						Вы можете <span>рассчитать стоимость</span> дизайн-проекта и ремонта прямо сейчас
 					</h2>
 					<p>
-						Предоставим Вам скидку 10% на проверенные нами строительные материалы
+						Ответьте на все вопросы и получите готовую смету и 1 из 3 подарков на выбор!
 					</p>
 				</div>
-				<form data-name="mainForm" class="form color">
-					<div class="form__field field-name">
-						<input type="text" data-name="formName" placeholder="Ваше имя" name="name" class="form__item">
+				<div class="quiz__content">
+					<div class="quiz__body">
+						<form data-name="quizForm" class="form">
+							<div class="quiz__container">
+								<ul class="quiz__numbers">
+									<li class="quiz__number active">01</li>
+									<li class="quiz__number">02</li>
+									<li class="quiz__number">03</li>
+									<li class="quiz__number">04</li>
+									<li class="quiz__number">05</li>
+									<li class="quiz__number last">06</li>
+								</ul>
+								<ul class="quiz__items">
+									<li class="quiz__item active">
+										<h3>Укажите тип вашего жилья</h3>
+										<div class="quiz__options">
+											<input type="radio" checked id="new" name="type" value="Новостройка" class="quiz__answer">
+											<label for="new" class="quiz__answer_label">Новостройка</label>
+											<input type="radio" id="second" name="type" value="Вторичное жильё" class="quiz__answer">
+											<label for="second" class="quiz__answer_label">Вторичное жильё</label>
+											<input type="radio" id="house" name="type" value="Дом или коттедж" class="quiz__answer">
+											<label for="house" class="quiz__answer_label">Дом или коттедж</label>
+										</div>
+									</li>
+									<li class="quiz__item">
+										<h3>Укажите общую площадь помещения</h3>
+										<div class="quiz__options">
+											<input type="radio" checked id="30" name="size" value="До 30 м²" class="quiz__answer">
+											<label for="30" class="quiz__answer_label">До 30 м²</label>
+											<input type="radio" id="30+" name="size" value="От 30 м² до 60 м²" class="quiz__answer">
+											<label for="30+" class="quiz__answer_label">От 30 м² до 60 м²</label>
+											<input type="radio" id="60+" name="size" value="Более 60 м²" class="quiz__answer">
+											<label for="60+" class="quiz__answer_label">Более 60 м²</label>
+										</div>
+									</li>
+									<li class="quiz__item">
+										<h3>Сколько комнат требуется отремонтировать?</h3>
+										<div class="quiz__options">
+											<input type="radio" checked id="one" name="room" value="Одну комнату" class="quiz__answer">
+											<label for="one" class="quiz__answer_label">Одну комнату</label>
+											<input type="radio" id="few" name="room" value="Несколько комнат" class="quiz__answer">
+											<label for="few" class="quiz__answer_label">Несколько комнат</label>
+											<input type="radio" id="all" name="room" value="Всю квартиру" class="quiz__answer">
+											<label for="all" class="quiz__answer_label">Всю квартиру</label>
+										</div>
+									</li>
+									<li class="quiz__item">
+										<h3>Какой вид ремонта требуется?</h3>
+										<div class="quiz__options">
+											<input type="radio" checked id="black" name="typeofRepair" value="Черновой ремонт"
+												class="quiz__answer">
+											<label for="black" class="quiz__answer_label">Черновой ремонт</label>
+											<input type="radio" id="cosmetic" name="typeofRepair" value="Косметический ремонт"
+												class="quiz__answer">
+											<label for="cosmetic" class="quiz__answer_label">Косметический ремонт</label>
+											<input type="radio" id="capital" name="typeofRepair" value="Капитальный ремонт"
+												class="quiz__answer">
+											<label for="capital" class="quiz__answer_label">Капитальный ремонт</label>
+											<input type="radio" id="elite" name="typeofRepair" value="Элитный ремонт" class="quiz__answer">
+											<label for="elite" class="quiz__answer_label">Элитный ремонт</label>
+										</div>
+									</li>
+									<li class="quiz__item">
+										<h3>Когда вы планируете начать ремонт?</h3>
+										<div class="quiz__options">
+											<input type="radio" checked id="day" name="timeofstart" value="В течение 3х дней"
+												class="quiz__answer">
+											<label for="day" class="quiz__answer_label">В течение 3х дней</label>
+											<input type="radio" id="month" name="timeofstart" value="В течение месяца" class="quiz__answer">
+											<label for="month" class="quiz__answer_label">В течение месяца</label>
+											<input type="radio" id="year" name="timeofstart" value="В течение полугода" class="quiz__answer">
+											<label for="year" class="quiz__answer_label">В течение полугода</label>
+											<input type="radio" id="moreyear" name="timeofstart" value="Более длительный срок"
+												class="quiz__answer">
+											<label for="moreyear" class="quiz__answer_label">Более длительный срок</label>
+										</div>
+									</li>
+									<li class="quiz__item">
+										<h3>Выберите ваш подарок:</h3>
+										<div class="quiz__options">
+											<input type="radio" id="photo" name="present" value="Фотосессию после ремонта"
+												class="quiz__answer">
+											<label for="photo" class="quiz__answer_label">Фотосессию после ремонта</label>
+											<input type="radio" checked id="discount" name="present" value="Скидка 10% на все дизайнерские
+											предметы интерьера в шоуруме" class="quiz__answer">
+											<label for="discount" class="quiz__answer_label">Скидка 10% на все дизайнерские
+												предметы интерьера в шоуруме</label>
+											<input type="radio" id="dinner" name="present" value="Ужин на двоих в ресторане"
+												class="quiz__answer">
+											<label for="dinner" class="quiz__answer_label">Ужин на двоих в ресторане</label>
+										</div>
+									</li>
+								</ul>
+								<div class="quiz__nav">
+									<div class="quiz__nav_arrow quiz__nav_prev hidden"></div>
+									<div class="quiz__nav_arrow quiz__nav_next "></div>
+								</div>
+							</div>
+							<div class="form-box hidden">
+								<h3>Мы приступаем к расчету Вашего ремонта!</h3>
+								<p>Для получения персональной скидки укажите Ваши данные:</p>
+								<div class="form__field field-name">
+									<input type="text" data-name="formName" placeholder="Ваше имя" name="name" class="form__item">
+								</div>
+								<div class="form__field field-phone">
+									<input type="text" data-name="formPhone" placeholder="Номер телефона" name="phone" class="form__item">
+								</div>
+								<p class="form__label">
+									Нажимая на эту кнопку Вы соглашаетесь с нашей
+									<a href="/politics.pdf" target="_blank" rel="nofollow">
+										Политикой конфиденциальностити</a>
+								</p>
+								<button class="main-btn form-btn-js" type="sumbit" name="quiz">Получить скидку</button>
+							</div>
+						</form>
+						<div class="form-success hidden">
+							Спасибо. Форма отправлена
+						</div>
 					</div>
-					<div class="form__field field-phone">
-						<input type="text" data-name="formPhone" placeholder="Номер телефона" name="phone" class="form__item">
+					<div class="quiz__present">
+						<p>
+							Ответьте на все вопросы и получите 1 из 3х подарков!
+						</p>
+						<img src="images/mainpage/present.webp" alt="подарок">
 					</div>
-					<p class="form__label">
-						Нажимая на эту кнопку Вы соглашаетесь с нашей
-						<a href="/politics.pdf" target="_blank" rel="nofollow"> Политикой конфиденциальностити</a>
-					</p>
-					<button class="main-btn form-btn-js" name="send" type="sumbit">Получить скидку</button>
-				</form>
-				<div class="form-success hidden">
-					Спасибо. Форма отправлена
 				</div>
 			</div>
 		</div>
@@ -583,57 +755,7 @@
 		</div>
 	</div>
 
-	<div class="modal same moda-same hidden">
-		<div class="modal__container">
-			<div class="modal__title">
-				<h3>
-					Хотите заказать подобный ремонт? Это не проблема!
-				</h3>
-			</div>
-			<form data-name="modalForm" class="form">
-				<div class="form__field field-name">
-					<input data-name="formName" type="text" placeholder="Ваше имя" name="name" class="form__item" required>
-				</div>
-				<div class="form__field field-phone">
-					<input data-name="formPhone" type="text" placeholder="Номер телефона" name="phone" class="form__item"
-						required>
-				</div>
-				<p class="form__label">
-					Нажимая на эту кнопку Вы соглашаетесь с нашей
-					<a href="/politics.pdf" target="_blank" rel="nofollow">
-						Политикойконфиденциальностити
-					</a>
-				</p>
-				<button class="main-btn form-btn-js" name="send" type="submit">
-					отправить заявку
-				</button>
-			</form>
-			<div class="form-success hidden">
-				Спасибо. Форма отправлена
-			</div>
-			<div class="modal__close close-js">
-				<svg width="30" height="30">
-					<use xlink:href="images/sprites.svg#close" />
-				</svg>
-			</div>
-		</div>
-	</div>
-
-	<script src="js/lightgallery.umd.js"></script>
-	<script src="js/lightgallery.min.js"></script>
-	<script src="js/lg-thumbnail.umd.js"></script>
-	<script src="js/lg-zoom.umd.js"></script>
-
 	<script src="js/main.js"></script>
-
-	<script>
-		lightGallery(document.getElementById('studia-epiliacii'), {
-			plugins: [lgZoom],
-			speed: 500,
-			licenseKey: 'vitaCompany'
-			// ... other settings
-		});
-	</script>
 </body>
 
 </html>

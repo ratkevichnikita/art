@@ -110,7 +110,7 @@
 									</svg>
 									<ul class="header__menu_innermenu remont">
 										<li>
-											<a href="/remont-domov-i-kottedzhej" rel="nofollow">
+											<a href="/remont-domov-i-kottedzhej.html" rel="nofollow">
 												Ремонт домов и коттеджей
 											</a>
 										</li>
@@ -164,7 +164,7 @@
 							</a>
 						</li>
 					</ul>
-					<div class="header__phone desctop modal-js">
+					<div class="header__phone desctop main-js modal-js">
 						<svg width="23" height="23">
 							<use xlink:href="images/sprites.svg#phone" />
 						</svg>
@@ -229,7 +229,7 @@
 										</p>
 										<ul class="mobile-menu__innermenu remont">
 											<li>
-												<a href="/remont-domov-i-kottedzhej" rel="nofollow">
+												<a href="/remont-domov-i-kottedzhej.html" rel="nofollow">
 													Ремонт домов и коттеджей
 												</a>
 											</li>
@@ -307,7 +307,7 @@
 						<h1>Трехкомнатная квартира в ЖК Суббота</h1>
 						<p>135м² / 60 дней / 472 000₽</p>
 					</div>
-					<a href="#form" class="main-btn go-to">
+					<a href="#" class="main-btn modal-js same-js">
 						Заказать подобное
 					</a>
 				</div>
@@ -435,7 +435,7 @@
 					</svg>
 					+ 7 (909) 689-03-99
 				</a>
-				<button class="sub-btn modal-js">
+				<button class="sub-btn main-js modal-js">
 					Перезвонить мне
 				</button>
 				<div class="footer__social">
@@ -598,7 +598,7 @@
 		</div>
 	</footer>
 
-	<div class="modal hidden">
+	<div class="modal hidden main">
 		<div class="modal__container">
 			<div class="modal__title">
 				<h3>
@@ -621,6 +621,42 @@
 				</p>
 				<button class="main-btn form-btn-js" name="send" type="submit">
 					Получить скидку
+				</button>
+			</form>
+			<div class="form-success hidden">
+				Спасибо. Форма отправлена
+			</div>
+			<div class="modal__close close-js">
+				<svg width="30" height="30">
+					<use xlink:href="images/sprites.svg#close" />
+				</svg>
+			</div>
+		</div>
+	</div>
+
+	<div class="modal same moda-same hidden">
+		<div class="modal__container">
+			<div class="modal__title">
+				<h3>
+					Хотите заказать подобный ремонт? Это не проблема!
+				</h3>
+			</div>
+			<form data-name="modalForm" class="form">
+				<div class="form__field field-name">
+					<input data-name="formName" type="text" placeholder="Ваше имя" name="name" class="form__item" required>
+				</div>
+				<div class="form__field field-phone">
+					<input data-name="formPhone" type="text" placeholder="Номер телефона" name="phone" class="form__item"
+						required>
+				</div>
+				<p class="form__label">
+					Нажимая на эту кнопку Вы соглашаетесь с нашей
+					<a href="/politics.pdf" target="_blank" rel="nofollow">
+						Политикойконфиденциальностити
+					</a>
+				</p>
+				<button class="main-btn form-btn-js" name="send" type="submit">
+					отправить заявку
 				</button>
 			</form>
 			<div class="form-success hidden">

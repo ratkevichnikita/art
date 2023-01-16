@@ -99,23 +99,38 @@ qList.forEach(item => {
 // open / close modal
 
 const modalBtn = document.querySelectorAll('.modal-js');
-const modal = document.querySelector('.modal');
+const modals = document.querySelectorAll('.modal');
 
 modalBtn.forEach(btn => {
-	btn.addEventListener('click', () => {
+	btn.addEventListener('click', (event) => {
 		document.body.classList.add('is-modal-open');
+		if(event.target.closest('.same-js')) {
+			document.body.classList.add('same');
+		}
+		if(event.target.closest('.main-js')) {
+			console.log('1')
+			document.body.classList.add('main');
+		}
 	})
 })
 
-modal.addEventListener('click', (event) => {
-	const target = event.target;
-	if (target.closest('.close-js')) {
-		document.body.classList.remove('is-modal-open');
-	}
-	if (target.classList.contains('modal')) {
-		document.body.classList.remove('is-modal-open');
-	}
-})
+for(let item of modals) {
+	item.addEventListener('click', (event) => {
+		const target = event.target;
+		if (target.closest('.close-js')) {
+			document.body.classList.remove('is-modal-open');
+			document.body.classList.remove('free');
+			document.body.classList.remove('same');
+			document.body.classList.remove('main');
+		}
+		if (target.classList.contains('modal')) {
+			document.body.classList.remove('is-modal-open');
+			document.body.classList.remove('free');
+			document.body.classList.remove('same');
+			document.body.classList.remove('main');
+		}
+	})
+}
 
 // smooth scroll
 
