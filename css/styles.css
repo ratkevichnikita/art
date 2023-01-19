@@ -2010,6 +2010,14 @@ body.scrollDown .header__inner {
   .header__phone.desctop {
     display: none;
   }
+  .header.about {
+    overflow: visible;
+    max-height: none;
+    height: auto !important;
+  }
+  .offer__inner.about {
+    flex-direction: column;
+  }
   .buttonbg.desctop {
     display: none;
   }
@@ -2090,13 +2098,7 @@ body.scrollDown .header__inner {
     z-index: 2;
   }
   .offer__aboutimg {
-    position: absolute;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    z-index: 1;
-    opacity: 0.2;
+    margin-top: 30px;
   }
   .allprojects__slider_info p:nth-child(2) {
     font-size: 18px;
@@ -2314,6 +2316,9 @@ body.scrollDown .header__inner {
   }
 }
 @media screen and (max-width: 480px) {
+  .breadcrumbs {
+    display: none;
+  }
   .offer__title {
     text-align: center;
     margin: 0 auto;
@@ -2442,9 +2447,6 @@ body.scrollDown .header__inner {
   }
   .advantages__title {
     margin-bottom: 30px;
-  }
-  .offer__aboutimg {
-    height: 95%;
   }
   .clients h2:before {
     width: 256px;
