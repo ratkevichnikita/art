@@ -131,6 +131,9 @@ body.is-modal-open.main .modal.main {
 body.is-modal-open.same .modal.same {
   display: flex;
 }
+body.is-modal-open.free .modal.free {
+  display: flex;
+}
 body.inner-page .header__menu_box > span {
   background-color: #121212;
 }
@@ -166,6 +169,9 @@ body.scrollDown .header__inner {
   display: block;
   background-color: #FBC062;
   cursor: pointer;
+}
+.main-btn:hover {
+  background-color: #FFAD28;
 }
 
 .sub-btn {
@@ -1531,6 +1537,14 @@ body.scrollDown .header__inner {
 }
 .ourworks__img {
   position: relative;
+  overflow: hidden;
+}
+.ourworks__img:hover img {
+  transform: scale(1.05);
+  transition: 0.3s;
+}
+.ourworks__img img {
+  transition: 0.3s;
 }
 .ourworks__img:before {
   content: "";
@@ -1688,6 +1702,106 @@ body.scrollDown .header__inner {
 }
 .breadcrumbs a {
   margin-right: 5px;
+}
+
+.tab__captions {
+  display: flex;
+  justify-content: space-between;
+}
+.tab__captions li {
+  width: 50%;
+  text-align: center;
+  padding: 17px 0;
+  border: 1px solid #D8D8D8;
+  font-weight: 600;
+  font-size: 14px;
+  text-transform: uppercase;
+  line-height: 140%;
+  cursor: pointer;
+  transition: 0.3s;
+}
+.tab__captions li:hover {
+  border: 1px solid #FBC267;
+}
+.tab__captions li.active {
+  background-color: #FBC267;
+  border: 1px solid #FBC267;
+}
+.tab__subcaption {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  border-bottom: 1px solid #D8D8D8;
+}
+.tab__subcaption.m-width {
+  justify-content: start;
+}
+.tab__subcaption.m-width li:not(:last-child) {
+  margin-right: 50px;
+}
+.tab__subcaption li {
+  padding-bottom: 10px;
+  cursor: pointer;
+  line-height: 1.5em;
+}
+.tab__subcaption li.active {
+  border-bottom: 2px solid #FBC062;
+}
+.tab__subcontent {
+  display: none;
+}
+.tab__subcontent.active {
+  display: block;
+}
+.tab__content {
+  display: none;
+  padding-top: 60px;
+}
+.tab__content.active {
+  display: block;
+}
+.tab__content_inner {
+  padding-top: 60px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+.tab__content_info {
+  max-width: 600px;
+  width: 100%;
+  margin-right: 15px;
+  margin-bottom: 20px;
+}
+.tab__content_text {
+  padding-top: 20px;
+}
+.tab__content_text > p {
+  margin-bottom: 30px;
+}
+.tab__content_text > p:last-child {
+  margin-bottom: 30px;
+  font-weight: 500;
+  font-size: 18px;
+  padding-top: 20px;
+}
+.tab__content_text ul {
+  padding-left: 15px;
+  margin-bottom: 20px;
+}
+.tab__content_text ul, .tab__content_text li {
+  list-style-type: disc;
+}
+.tab__content__img {
+  margin-bottom: 20px;
+}
+.tab__section {
+  padding-top: 100px;
+}
+.tab__section .works-list__items {
+  margin-bottom: 40px;
+}
+.tab__section .buttonbg {
+  margin: 60px auto 0;
 }
 
 .lds-spinner {
@@ -1885,6 +1999,9 @@ body.scrollDown .header__inner {
   .design-page__img {
     order: -1;
   }
+  .tab__content_info {
+    max-width: 400px;
+  }
 }
 @media screen and (max-width: 992px) {
   .header__phone.mobile {
@@ -1931,6 +2048,18 @@ body.scrollDown .header__inner {
   }
   .ourworks__item {
     max-width: 350px;
+  }
+  .tab__content_info {
+    max-width: 800px;
+  }
+  .tab__subcaption {
+    border-bottom: 1px solid transparent;
+  }
+  .tab__subcaption li {
+    margin-bottom: 10px;
+  }
+  .tab__subcaption li:not(:last-child) {
+    margin-right: 10px;
   }
 }
 @media screen and (max-width: 768px) {
@@ -2086,6 +2215,13 @@ body.scrollDown .header__inner {
     width: 370px;
     height: 100px;
   }
+  .tab__content {
+    padding-top: 30px;
+  }
+  .tab__subcaption li {
+    margin-bottom: 15px;
+    padding-bottom: 5px;
+  }
 }
 @media screen and (max-width: 540px) {
   .header__phone.mobile {
@@ -2159,6 +2295,22 @@ body.scrollDown .header__inner {
   }
   .works-list__item {
     margin-bottom: 15px;
+  }
+  .tab__subcaption {
+    display: block;
+    -moz-column-count: 1;
+         column-count: 1;
+  }
+  .tab__subcaption li {
+    width: -webkit-fit-content;
+    width: -moz-fit-content;
+    width: fit-content;
+  }
+  .tab__content_inner {
+    padding-top: 30px;
+  }
+  .tab__section {
+    padding-top: 60px;
   }
 }
 @media screen and (max-width: 480px) {
@@ -2324,7 +2476,7 @@ body.scrollDown .header__inner {
     min-height: 650px;
   }
   .works-list__title:before {
-    top: -28px;
+    top: 0;
     width: 300px;
     height: 80px;
   }

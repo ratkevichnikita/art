@@ -107,8 +107,10 @@ modalBtn.forEach(btn => {
 		if(event.target.closest('.same-js')) {
 			document.body.classList.add('same');
 		}
+		if(event.target.closest('.free-js')) {
+			document.body.classList.add('free');
+		}
 		if(event.target.closest('.main-js')) {
-			console.log('1')
 			document.body.classList.add('main');
 		}
 	})
@@ -269,8 +271,7 @@ const stickyHeader = () => {
 
 }
 
-
-
+// make a layout cover on map
 const wrapMap = document.querySelector('.main-contacts__map');
 if(wrapMap) {
 	wrapMap.addEventListener('click', ()  => {
@@ -290,10 +291,42 @@ if(wrapMap) {
 	}) 
 }
 
-
-
-
-	// двигаем подсказку по области карты вместе с мышкой пользователя
+	// moving hint on map area
 	// if(event.offsetY > 10) mapTitle.style.top = event.offsetY + 20 + 'px';
 	// if(event.offsetX > 10) mapTitle.style.left = event.offsetX + 20 + 'px';
 
+	// tabs 
+	const tab = document.querySelector('.tab-js');
+	const tabConetnt = document.querySelectorAll('.tab__content');
+	const tabCaptions = document.querySelectorAll('.main-caption-js');
+	const tabRemontContent = document.querySelectorAll('.tab-remontContent-js');
+	const tabRemontCaptions = document.querySelectorAll('.remont-caption-js');
+	const tabDesignCaptions = document.querySelectorAll('.design-caption-js');
+	const tabDesignContent = document.querySelectorAll('.tab-designContent-js');
+
+	if(tab) {
+		tab.addEventListener('click', (event) => {
+			let target = event.target;
+			const switchTab = (captionsArr,contentArr) => {
+				captionsArr.forEach(item => item.classList.remove('active'));
+				const captionIndex = [...captionsArr].findIndex(item => item === target);
+				contentArr.forEach(item => item.classList.remove('active'));
+				const currentTab = [...contentArr].find((item,index) => index === captionIndex);
+				currentTab.classList.add('active');
+			}
+			if(target.dataset.name === 'mainTab') {
+				switchTab(tabCaptions,tabConetnt);
+				target.classList.add('active');
+			}
+			if(target.dataset.name === 'remontCaption') {
+				switchTab(tabRemontCaptions,tabRemontContent);
+				target.classList.add('active');
+			}
+			if(target.dataset.name === 'designCaption') {
+				switchTab(tabDesignCaptions,tabDesignContent);
+				target.classList.add('active');
+			}
+		})
+		
+	}
+	

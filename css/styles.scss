@@ -143,6 +143,11 @@ body {
         display: flex;
       }
     }
+    &.free {
+      .modal.free {
+        display: flex;
+      }
+    }
   }
   &.inner-page {
     .header__menu_box > span {
@@ -187,6 +192,9 @@ body {
   display: block;
   background-color: #FBC062;
   cursor: pointer;
+  &:hover {
+    background-color: #FFAD28;
+  }
 }
 
 .sub-btn {
@@ -1812,6 +1820,16 @@ body {
 
   &__img {
     position: relative;
+    overflow: hidden;
+    &:hover {
+      img {
+        transform: scale(1.05);
+        transition: 0.3s;
+      }
+    }
+    img {
+      transition: 0.3s;
+    }
     &:before {
       content: '';
       width: 100%;
@@ -1995,6 +2013,112 @@ body {
 }
 
 // breadcrumbs - end 
+
+// tabs 
+
+
+.tab {
+  &__captions {
+    display: flex;
+    justify-content: space-between;
+    li {
+      width: 50%;
+      text-align: center;
+      padding: 17px 0;
+      border: 1px solid #D8D8D8;
+      font-weight: 600;
+      font-size: 14px;
+      text-transform: uppercase;
+      line-height: 140%;
+      cursor: pointer;
+      transition: 0.3s;
+      &:hover {
+        border: 1px solid #FBC267;
+      }
+      &.active {
+        background-color: #FBC267;
+        border: 1px solid #FBC267;
+      }
+    }
+  }
+  &__subcaption {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    border-bottom: 1px solid #D8D8D8;
+    &.m-width {
+      justify-content: start;
+      li:not(:last-child) {
+        margin-right: 50px;
+      }
+    }
+    li {
+      padding-bottom: 10px;
+      cursor: pointer;
+      line-height: 1.5em;
+      &.active {
+        border-bottom: 2px solid #FBC062;
+      }
+    }
+  }
+  &__subcontent {
+    display: none;
+    &.active {
+      display: block;
+    }
+  }
+  &__content {
+    display: none;
+    padding-top: 60px;
+    &.active {
+      display: block;
+    }
+    &_inner {
+      padding-top: 60px;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+    }
+    &_info {
+      max-width: 600px;
+      width: 100%;
+      margin-right: 15px;
+      margin-bottom: 20px;
+    }
+    &_text {
+      padding-top: 20px;
+      > p {
+        margin-bottom: 30px;
+        &:last-child {
+          margin-bottom: 30px;
+          font-weight: 500;
+          font-size: 18px;
+          padding-top: 20px;
+        }
+      }
+      ul {
+        padding-left: 15px;
+        margin-bottom: 20px;
+      }
+      ul,li {
+        list-style-type: disc;
+      }
+    }
+    &__img {
+      margin-bottom: 20px;
+    }
+  }
+  &__section {
+    padding-top: 100px;
+    .works-list__items {
+      margin-bottom: 40px;
+    }
+    .buttonbg {
+      margin:  60px auto 0;
+    }
+  }
+  
+}
 
 
 // loader ----------------
