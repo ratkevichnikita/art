@@ -537,6 +537,13 @@ body.scrollDown .header__inner {
 }
 .allprojects__slider_img {
   position: relative;
+  overflow: hidden;
+}
+.allprojects__slider_img img {
+  transition: 0.3s;
+}
+.allprojects__slider_img:hover img {
+  transform: scale(1.05);
 }
 .allprojects__slider_img:before {
   content: "";
@@ -2223,6 +2230,21 @@ body.scrollDown .header__inner {
   .tab__subcaption li {
     margin-bottom: 15px;
     padding-bottom: 5px;
+  }
+  .header.about .overlay {
+    position: relative;
+    opacity: 1;
+  }
+  .offer .overlay {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+    opacity: 0.3;
+  }
+  .offer .overlay img {
+    width: 100%;
   }
 }
 @media screen and (max-width: 540px) {
