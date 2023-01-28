@@ -1,0 +1,649 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="author" content="VitaCompany">
+	<meta property="og:title" content="Vita Company | Комплексный дизайн-ремонт с гарантией от 3-х лет">
+	<meta property="og:description"
+		content="Разработаем комплексный дизайн-ремонт в квартире от 30 м² с гарантией на работу от 3 лет. 9 лет опыта. 250+ выполненных проектов.">
+	<meta property="og:type" content="article">
+	<meta property="og:image" content="./images/ogimage.jpeg">
+	<meta property="og:site_name" content="vita-company">
+	<title>Vita Company | Дизайн проект кабинета руководителя</title>
+	<meta name="description"
+		content="Разработаем комплексный дизайн-ремонт в квартире от 30 м² с гарантией на работу от 3 лет. 9 лет опыта. 250+ выполненных проектов." />
+
+	<link rel="stylesheet" href="css/lightgallery.css">
+	<link rel="stylesheet" href="css/lg-thumbnail.css">
+	<link rel="stylesheet" href="css/lg-zoom.css">
+	<link rel="stylesheet" href="css/styles.css">
+</head>
+
+<script>
+	window.onload = () => {
+		// устанавливаем настройки
+		const options = {
+			// родитель целевого элемента - область просмотра
+			root: null,
+			// без отступов
+			rootMargin: '0px',
+			// процент пересечения 
+			threshold: 0
+		}
+
+		// создаем наблюдатель
+		const observer = new IntersectionObserver((entries, observer) => {
+			// для каждой записи-целевого элемента
+			entries.forEach(entry => {
+				// если элемент является наблюдаемым
+				if (entry.isIntersecting) {
+					const lazyImg = entry.target;
+					lazyImg.classList.add('active')
+					// прекращаем наблюдение
+					observer.unobserve(lazyImg)
+				}
+			})
+		}, options)
+
+		const images = document.querySelectorAll('.works-single__item');
+		images.forEach(img => observer.observe(img))
+	}
+</script>
+
+<body class="inner-page">
+	<header class="header h-auto">
+		<div class="header__inner">
+			<div class="wrapper">
+				<div class="header__top">
+					<a href="/" rel="nofollow" class="header__logo">
+						<img src="images/logo.svg" alt="Логотип компании vitaCompany">
+					</a>
+					<ul class="header__menu">
+						<li class="header__menu_item sub-menu">
+							<div class="header__menu_box">
+								<span></span>
+								<span></span>
+								<span></span>
+							</div>
+							<p>Услуги</p>
+							<ul class="header__menu_inner">
+								<li class="header__menu_subitem design">
+									<p>Дизайн</p>
+									<svg width="20" height="20">
+										<use xlink:href="images/sprites.svg#arrow" />
+									</svg>
+									<ul class="header__menu_innermenu design">
+										<li>
+											<a href="/dizajn-interera-doma.html" rel="nofollow">
+												Дизайн интерьера дома
+											</a>
+										</li>
+										<li>
+											<a href="/dizajn-interera-kvartir.html" rel="nofollow">
+												Дизайн интерьера квартир
+											</a>
+										</li>
+										<li>
+											<a href="/dizajn-interera-kafe.html" rel="nofollow">
+												Дизайн интерьера кафе
+											</a>
+										</li>
+										<li>
+											<a href="/dizajn-interera-ofisov.html" rel="nofollow">
+												Дизайн интерьера офисов
+											</a>
+										</li>
+										<li>
+											<a href="/dizajn-interera-kovorkingov.html" rel="nofollow">
+												Дизайн интерьера коворкингов
+											</a>
+										</li>
+									</ul>
+								</li>
+								<li class="header__menu_subitem remont">
+									<p>Ремонт</p>
+									<svg width="20" height="20">
+										<use xlink:href="images/sprites.svg#arrow" />
+									</svg>
+									<ul class="header__menu_innermenu remont">
+										<li>
+											<a href="/remont-domov-i-kottedzhej.html" rel="nofollow">
+												Ремонт домов и коттеджей
+											</a>
+										</li>
+										<li>
+											<a href="/remont-kvartir.html" rel="nofollow">
+												Ремонт квартир
+											</a>
+										</li>
+										<li>
+											<a href="/chernovoj-remont-kvartir.html" rel="nofollow">
+												Черновой ремонт квартир
+											</a>
+										</li>
+										<li>
+											<a href="/kosmeticheskij-remont-kvartir.html" rel="nofollow">
+												Косметический ремонт квартир
+											</a>
+										</li>
+										<li>
+											<a href="/kapitalnyij-remont-kvartir.html" rel="nofollow">
+												Капитальный ремонт квартир
+											</a>
+										</li>
+									</ul>
+								</li>
+							</ul>
+						</li>
+						<li class="header__menu_item">
+							<a class="header__menu_link" href="/nashi-rabotyi.html" rel="nofollow">
+								Наши работы
+							</a>
+						</li>
+						<li class="header__menu_item">
+							<a class="header__menu_link" href="/stoimost.html" rel="nofollow">
+								Стоимость
+							</a>
+						</li>
+						<li class="header__menu_item">
+							<a class="header__menu_link" href="/o-kompanii.html" rel="nofollow">
+								О компании
+							</a>
+						</li>
+						<li class="header__menu_item">
+							<a class="header__menu_link" href="/otzyivyi.html" rel="nofollow">
+								Отзывы
+							</a>
+						</li>
+						<li class="header__menu_item">
+							<a class="header__menu_link" href="/kontaktyi.html" rel="nofollow">
+								Контакты
+							</a>
+						</li>
+					</ul>
+					<div class="header__phone desctop main-js modal-js">
+						<svg width="23" height="23">
+							<use xlink:href="images/sprites.svg#phone" />
+						</svg>
+						+ 7 (499) 677-48-17
+					</div>
+					<a href="tel:+74996774817" class="header__phone mobile">
+						<svg width="23" height="23">
+							<use xlink:href="images/sprites.svg#phone" />
+						</svg>
+						+ 7 (499) 677-48-17
+					</a>
+					<div class="mobile-menu-button">
+						<span></span>
+						<span></span>
+						<span></span>
+					</div>
+					<div class="mobile-menu">
+						<ul class="mobile-menu__list">
+							<li class="mobile-menu__item sub-menu">
+								<ul class="mobile-menu__inner">
+									<li class="mobile-menu__subitem design subitem-js">
+										<p>
+											<svg width="20" height="20">
+												<use xlink:href="images/sprites.svg#arrow" />
+											</svg>
+											Дизайн
+										</p>
+										<ul class="mobile-menu__innermenu design">
+											<li>
+												<a href="/dizajn-interera-doma.html" rel="nofollow">
+													Дизайн интерьера дома
+												</a>
+											</li>
+											<li>
+												<a href="/dizajn-interera-kvartir.html" rel="nofollow">
+													Дизайн интерьера квартир
+												</a>
+											</li>
+											<li>
+												<a href="/dizajn-interera-kafe.html" rel="nofollow">
+													Дизайн интерьера кафе
+												</a>
+											</li>
+											<li>
+												<a href="/dizajn-interera-ofisov.html" rel="nofollow">
+													Дизайн интерьера офисов
+												</a>
+											</li>
+											<li>
+												<a href="/dizajn-interera-kovorkingov.html" rel="nofollow">
+													Дизайн интерьера коворкингов
+												</a>
+											</li>
+										</ul>
+									</li>
+									<li class="mobile-menu__subitem remont subitem-js">
+										<p>
+											<svg width="20" height="20">
+												<use xlink:href="images/sprites.svg#arrow" />
+											</svg>
+											Ремонт
+										</p>
+										<ul class="mobile-menu__innermenu remont">
+											<li>
+												<a href="/remont-domov-i-kottedzhej.html" rel="nofollow">
+													Ремонт домов и коттеджей
+												</a>
+											</li>
+											<li>
+												<a href="/remont-kvartir.html" rel="nofollow">
+													Ремонт квартир
+												</a>
+											</li>
+											<li>
+												<a href="/chernovoj-remont-kvartir.html" rel="nofollow">
+													Черновой ремонт квартир
+												</a>
+											</li>
+											<li>
+												<a href="/kosmeticheskij-remont-kvartir.html" rel="nofollow">
+													Косметический ремонт квартир
+												</a>
+											</li>
+											<li>
+												<a href="/kapitalnyij-remont-kvartir.html" rel="nofollow">
+													Капитальный ремонт квартир
+												</a>
+											</li>
+										</ul>
+									</li>
+								</ul>
+							</li>
+							<li class="mobile-menu__item">
+								<a class="header__menu_link" href="/nashi-rabotyi.html" rel="nofollow">
+									Наши работы
+								</a>
+							</li>
+							<li class="mobile-menu__item">
+								<a class="header__menu_link" href="/stoimost.html" rel="nofollow">
+									Стоимость
+								</a>
+							</li>
+							<li class="mobile-menu__item">
+								<a class="header__menu_link" href="/o-kompanii.html" rel="nofollow">
+									О компании
+								</a>
+							</li>
+							<li class="mobile-menu__item">
+								<a class="header__menu_link" href="/otzyivyi.html" rel="nofollow">
+									Отзывы
+								</a>
+							</li>
+							<li class="mobile-menu__item">
+								<a class="header__menu_link" href="/kontaktyi.html" rel="nofollow">
+									Контакты
+								</a>
+							</li>
+						</ul>
+					</div>
+				</div>
+				<div class="header__line">
+					<p>Делаем ремонт и разрабатываем уникальные дизайн-проекты</p>
+					<p class="modal-js">Перезвонить мне</p>
+				</div>
+			</div>
+		</div>
+		<div class="offer h-auto">
+			<div class="wrapper">
+				<div class="breadcrumbs">
+					<a href="/" rel="nofollow">Главная /</a>
+					<a href="/nashi-rabotyi.html" rel="nofollow">Наши работы /</a>
+					<p>Дизайн проект кабинета руководителя</p>
+				</div>
+			</div>
+		</div>
+		<div class="works-single">
+			<div class="wrapper">
+				<div class="works-single__title">
+					<div class="works-single__box">
+						<h1>Дизайн проект кабинета руководителя</h1>
+						<p>54м² / 40 дней / 189 000₽</p>
+					</div>
+					<a href="#" class="main-btn modal-js same-js">
+						Заказать подобное
+					</a>
+				</div>
+				<div id="kabinet" class="works-single__list">
+					<a href="images/kabinet/full/img1.jpg" class="works-single__item">
+						<img src="images/kabinet/img.jpg" alt="Дизайн проект кабинета руководителя">
+					</a>
+					<a href="images/kabinet/full/img2.jpg" class="works-single__item">
+						<img src="images/kabinet/img-1.jpg" alt="Дизайн проект кабинета руководителя">
+					</a>
+					<a href="images/kabinet/full/img3.jpg" class="works-single__item">
+						<img src="images/kabinet/img-2.jpg" alt="Дизайн проект кабинета руководителя">
+					</a>
+					<a href="images/kabinet/full/img4.jpg" class="works-single__item">
+						<img src="images/kabinet/img-3.jpg" alt="Дизайн проект кабинета руководителя">
+					</a>
+					<a href="images/kabinet/full/img5.jpg" class="works-single__item">
+						<img src="images/kabinet/img-4.jpg" alt="Дизайн проект кабинета руководителя">
+					</a>
+					<a href="images/kabinet/full/img6.jpg" class="works-single__item">
+						<img src="images/kabinet/img-5.jpg" alt="Дизайн проект кабинета руководителя">
+					</a>
+					<a href="images/kabinet/full/img7.jpg" class="works-single__item">
+						<img src="images/kabinet/img-6.jpg" alt="Дизайн проект кабинета руководителя">
+					</a>
+					<a href="images/kabinet/full/img8.jpg" class="works-single__item">
+						<img src="images/kabinet/img-7.jpg" alt="Дизайн проект кабинета руководителя">
+					</a>
+					<a href="images/kabinet/full/img9.jpg" class="works-single__item">
+						<img src="images/kabinet/img-8.jpg" alt="Дизайн проект кабинета руководителя">
+					</a>
+					<a href="images/kabinet/full/img10.jpg" class="works-single__item">
+						<img src="images/kabinet/img-9.jpg" alt="Дизайн проект кабинета руководителя">
+					</a>
+					
+				</div>
+			</div>
+		</div>
+	</header>
+
+	<section id="form" class="section section-form bg2">
+		<div class="wrapper">
+			<div class="section-form__content">
+				<div class="section-form__title">
+					<h2>
+						Получите подробную смету и точную стоимость Вашего ремонта
+					</h2>
+					<p>
+						Предоставим Вам скидку 10% на проверенные нами строительные материалы
+					</p>
+				</div>
+				<form data-name="mainForm" class="form color">
+					<div class="form__field field-name">
+						<input type="text" data-name="formName" placeholder="Ваше имя" name="name" class="form__item">
+					</div>
+					<div class="form__field field-phone">
+						<input type="text" data-name="formPhone" placeholder="Номер телефона" name="phone" class="form__item">
+					</div>
+					<p class="form__label">
+						Нажимая на эту кнопку Вы соглашаетесь с нашей
+						<a href="/politics.pdf" target="_blank" rel="nofollow"> Политикой конфиденциальностити</a>
+					</p>
+					<button class="main-btn form-btn-js" name="send" type="sumbit">Получить скидку</button>
+				</form>
+				<div class="form-success hidden">
+					Спасибо. Форма отправлена
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<footer class="footer">
+		<div class="wrapper">
+			<div class="footer__header columns">
+				<a href="tel:+74996774817" class="footer__phone">
+					<svg width="23" height="23">
+						<use xlink:href="images/sprites.svg#phone" />
+					</svg>
+					+ 7 (499) 677-48-17
+				</a>
+				<a href="tel:+79096890399" class="footer__phone">
+					<svg width="23" height="23">
+						<use xlink:href="images/sprites.svg#phone" />
+					</svg>
+					+ 7 (909) 689-03-99
+				</a>
+				<button class="sub-btn main-js modal-js">
+					Перезвонить мне
+				</button>
+				<div class="footer__social">
+					<a href="https://vk.com/club211313624" target="_blank" rel="nofollow">
+						<svg width="24" height="25">
+							<use xlink:href="images/sprites.svg#vk" />
+						</svg>
+					</a>
+					<a href="https://t.me/vita_company_design" target="_blank" rel="nofollow">
+						<svg width="24" height="25">
+							<use xlink:href="images/sprites.svg#telega" />
+						</svg>
+					</a>
+					<a href="mailto:Info@vita-company.ru" target="_blank" rel="nofollow">
+						<svg width="24" height="25">
+							<use xlink:href="images/sprites.svg#mail" />
+						</svg>
+					</a>
+				</div>
+			</div>
+			<div class="footer__body columns">
+				<div class="footer__body_item">
+					<p class="footer__body_name">
+						Услуги. Дизайн
+					</p>
+					<ul>
+						<li>
+							<a href="/dizajn-interera-doma.html">
+								Дизайн интерьера дома
+							</a>
+						</li>
+						<li>
+							<a href="/dizajn-interera-kvartir.html">
+								Дизайн интерьера квартир
+							</a>
+						</li>
+						<li>
+							<a href="/dizajn-interera-kafe.html" rel="nofollow">
+								Дизайн интерьера кафе
+							</a>
+						</li>
+						<li>
+							<a href="/dizajn-interera-ofisov.html" rel="nofollow">
+								Дизайн интерьера офисов
+							</a>
+						</li>
+						<li>
+							<a href="/dizajn-interera-kovorkingov.html" rel="nofollow">
+								Дизайн интерьера коворкингов
+							</a>
+						</li>
+					</ul>
+				</div>
+				<div class="footer__body_item">
+					<p class="footer__body_name">
+						Услуги. Дизайн
+					</p>
+					<ul>
+						<li>
+							<a href="/remont-domov-i-kottedzhej.html" rel="nofollow">
+								Ремонт домов и коттеджей
+							</a>
+						</li>
+						<li>
+							<a href="/remont-kvartir.html" rel="nofollow">
+								Ремонт квартир
+							</a>
+						</li>
+						<li>
+							<a href="/chernovoj-remont-kvartir.html" rel="nofollow">
+								Черновой ремонт квартир
+							</a>
+						</li>
+						<li>
+							<a href="/kosmeticheskij-remont-kvartir.html" rel="nofollow">
+								Косметический ремонт квартир
+							</a>
+						</li>
+						<li>
+							<a href="/kapitalnyij-remont-kvartir.html" rel="nofollow">
+								Капитальный ремонт квартир
+							</a>
+						</li>
+					</ul>
+				</div>
+				<div class="footer__body__item">
+					<ul class="main-menu">
+						<li>
+							<a href="/nashi-rabotyi.html" rel="nofollow">
+								Наши работы
+							</a>
+						</li>
+						<li>
+							<a href="/stoimost.html" rel="nofollow">
+								Стоимость
+							</a>
+						</li>
+						<li>
+							<a href="/o-kompanii.html" rel="nofollow">
+								О компании
+							</a>
+						</li>
+						<li>
+							<a href="/otzyivyi.html" rel="nofollow">
+								Отзывы
+							</a>
+						</li>
+						<li>
+							<a href="/kontaktyi.html" rel="nofollow">
+								Контакты
+							</a>
+						</li>
+					</ul>
+				</div>
+				<div class="footer__body_item">
+					<p class="footer__body_name">
+						Шоурум
+					</p>
+					<ul class="adress">
+						<li>
+							<a href="#">
+								Приглашаем вас к нам в шоурум
+								<svg width="30" height="8">
+									<use xlink:href="images/sprites.svg#arrow1" />
+								</svg>
+							</a>
+						</li>
+						<li>
+							<p>Офис</p>
+							<p>Россия, г. Москва,
+								ул. Николая Химушкина, 2/7, стр.7</p>
+							<p>Режим работы: <span>8:00 – 20:00</span></p>
+						</li>
+					</ul>
+				</div>
+			</div>
+			<div class="footer__down columns">
+				<div class="footer__down_item">
+					<a href="/">
+						<img src="images/logo.svg" alt="Логотип компании vitaCompany">
+					</a>
+				</div>
+				<div class="footer__down_item">
+					<p class="footer__down_desc">
+						© 2014 – 2022. «Вита Компани».
+						Дизайн, ремонт и отделка квартир в Москве и области
+					</p>
+				</div>
+				<div class="footer__down_item">
+					<a href="/dogovor-remont.pdf" target="_blank" rel="nofollow" class="footer__down_document">
+						Скачать образец договора на ремонт
+					</a>
+				</div>
+				<div class="footer__down_item">
+					<a href="/dogovor-design.pdf" target="_blank" rel="nofollow" class="footer__down_document">
+						Скачать образец договора на дизайн
+					</a>
+				</div>
+			</div>
+		</div>
+	</footer>
+
+	<div class="modal hidden main">
+		<div class="modal__container">
+			<div class="modal__title">
+				<h3>
+					Нужна консультация специалиста? Перезвоним в течение 15 минут.
+				</h3>
+			</div>
+			<form data-name="modalForm" class="form">
+				<div class="form__field field-name">
+					<input data-name="formName" type="text" placeholder="Ваше имя" name="name" class="form__item" required>
+				</div>
+				<div class="form__field field-phone">
+					<input data-name="formPhone" type="text" placeholder="Номер телефона" name="phone" class="form__item"
+						required>
+				</div>
+				<p class="form__label">
+					Нажимая на эту кнопку Вы соглашаетесь с нашей
+					<a href="/politics.pdf" target="_blank" rel="nofollow">
+						Политикойконфиденциальностити
+					</a>
+				</p>
+				<button class="main-btn form-btn-js" name="send" type="submit">
+					Получить скидку
+				</button>
+			</form>
+			<div class="form-success hidden">
+				Спасибо. Форма отправлена
+			</div>
+			<div class="modal__close close-js">
+				<svg width="30" height="30">
+					<use xlink:href="images/sprites.svg#close" />
+				</svg>
+			</div>
+		</div>
+	</div>
+
+	<div class="modal same moda-same hidden">
+		<div class="modal__container">
+			<div class="modal__title">
+				<h3>
+					Хотите заказать подобный ремонт? Это не проблема!
+				</h3>
+			</div>
+			<form data-name="modalForm" class="form">
+				<div class="form__field field-name">
+					<input data-name="formName" type="text" placeholder="Ваше имя" name="name" class="form__item" required>
+				</div>
+				<div class="form__field field-phone">
+					<input data-name="formPhone" type="text" placeholder="Номер телефона" name="phone" class="form__item"
+						required>
+				</div>
+				<p class="form__label">
+					Нажимая на эту кнопку Вы соглашаетесь с нашей
+					<a href="/politics.pdf" target="_blank" rel="nofollow">
+						Политикойконфиденциальностити
+					</a>
+				</p>
+				<button class="main-btn form-btn-js" name="send" type="submit">
+					отправить заявку
+				</button>
+			</form>
+			<div class="form-success hidden">
+				Спасибо. Форма отправлена
+			</div>
+			<div class="modal__close close-js">
+				<svg width="30" height="30">
+					<use xlink:href="images/sprites.svg#close" />
+				</svg>
+			</div>
+		</div>
+	</div>
+
+	<script src="js/lightgallery.umd.js"></script>
+	<script src="js/lightgallery.min.js"></script>
+	<script src="js/lg-thumbnail.umd.js"></script>
+	<script src="js/lg-zoom.umd.js"></script>
+
+	<script src="js/main.js"></script>
+
+	<script>
+		lightGallery(document.getElementById('kabinet'), {
+			plugins: [lgZoom],
+			speed: 500,
+			licenseKey: 'vitaCompany'
+			// ... other settings
+		});
+	</script>
+</body>
+
+</html>
